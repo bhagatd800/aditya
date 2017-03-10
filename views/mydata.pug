@@ -1,0 +1,1603 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title My_Data
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    link(rel='stylesheet', href='http://www.w3schools.com/lib/w3.css')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+    style.
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      #name {
+      color: #B4886B;
+      font-weight: bold;
+      float: left;
+      margin-left:100px;
+      font-size:15px;
+      }
+      #wd
+      {
+      margin-left:20px;
+      }
+      .file-uploader {
+      background-color: #dbefe9;
+      border-radius: 3px;
+      color: #242424;
+      }
+      .file-uploader__message-area {
+      font-size: 18px;
+      padding: 1em;
+      text-align: center;
+      color: #377a65;
+      }
+      .file-list {
+      background-color: white;
+      font-size: 16px;
+      }
+      .file-list__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .file-list li {
+      height: 50px;
+      line-height: 50px;
+      margin-left: .5em;
+      border: none;
+      overflow: hidden;
+      }
+      .removal-button {
+      width: 20%;
+      border: none;
+      background-color: #d65d38;
+      color: white;
+      }
+      .removal-button::before {
+      content: "X";
+      }
+      .removal-button:focus {
+      outline: 0;
+      }
+      .file-chooser {
+      padding: 1em;
+      transition: background-color 1s, height 1s;
+      }
+      .file-chooser p {
+      font-size: 18px;
+      padding-top: 1em;
+      }
+      .file-uploader {
+      max-width: 400px;
+      height: auto;
+      margin: 2em auto;
+      }
+      .file-uploader * {
+      display: block;
+      }
+      .file-uploader input[type=submit] {
+      margin-top: 2em;
+      float: right;
+      }
+      .file-list {
+      margin: 0 auto;
+      max-width: 90%;
+      }
+      .file-list__name {
+      max-width: 70%;
+      float: left;
+      }
+      .removal-button {
+      display: inline-block;
+      height: 100%;
+      float: right;
+      }
+      .file-chooser {
+      width: 90%;
+      margin: .5em auto;
+      }
+      .file-chooser__input {
+      margin: 0 auto;
+      }
+      .file-uploader__submit-button {
+      width: 100%;
+      border: none;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #72bfa7;
+      color: white;
+      }
+      .file-uploader__submit-button:hover {
+      background-color: #a7d7c8;
+      }
+      .file-list li:after, .file-uploader:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .hidden {
+      display: none;
+      }
+      .hidden input {
+      display: none;
+      }
+      .error {
+      background-color: #d65d38;
+      color: white;
+      }
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      }
+      .upload-btn,.upload-btnadhar{
+      color: #ffffff;
+      background-color: #F89406;
+      border: none;
+      }
+      .upload-btnpassport{
+      color: #ffffff;
+      background-color: #F89406;
+      border: none;
+      }
+      .upload-btn:hover,
+      .upload-btn:focus,
+      .upload-btn:active,
+      .upload-btn.active,
+      .upload-btn:hover,
+      .upload-btnadhar:focus,
+      .upload-btnadhar:active,
+      .upload-btnadhar.active
+      .upload-btnpassport:hover,
+      .upload-btnpassport:focus,
+      .upload-btnpassport:active,
+      .upload-btnpassport.active {
+      color: #ffffff;
+      background-color: #FA8900;
+      border: none;
+      }
+      #upload-input, #upload-inputadhar, #upload-inputpassport {
+      display: none;
+      }
+      .bs-example{
+        margin: 20px;
+      }
+      .modal-dialog {
+    
+        width: 30%; /* Full width */
+        padding-top: 100px; 
+      }
+      .personal_details {
+      background-color: white;
+      width: 90%;
+      margin-left:5%;
+      }
+      .personal_details h3 {
+      padding: 10px;
+      border-bottom: 2px solid #fd9f1b;
+      }
+<<<<<<< HEAD
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .panel-box .size-h1 {
+      margin-top:7px;
+      }
+      .panel-box .fa {
+      margin-top:9px;
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+      
+      .success-text {
+      color: #82b33a;
+      }
+      .btn-info{
+      margin-left:20px;
+      }
+      .btn-circle {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 12px;
+      line-height: 1.428571429;
+      border-radius: 15px;
+      }
+=======
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='/dashbord')
+          b
+            img(src='myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+        .top-menu
+          ul.nav.pull-right.top-menu
+            li
+              a.logout(href='logout') Logout
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/dashbord')
+                if user.profilepic
+                  img.img-circle(src=user.profilepic, width='80')
+                else
+                  img.img-circle(src='img/user.jpg', width='80')
+            h5.centered 
+              p.sname= user.StaffName
+<<<<<<< HEAD
+            li.sub-menu
+              a(data-toggle='tab', href='#personaldata')
+=======
+            li.mt
+              a.active(data-toggle='tab', href='#personaldata')
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                i.fa.fa-user
+                span Personal Data
+            li.sub-menu
+              a(data-toggle='tab', href='#education')
+                i.fa.fa-book
+                span Education
+              //
+                											<ul class="sub">
+                													<li><a  href="general.html">General</a></li>
+                													<li><a  href="buttons.html">Buttons</a></li>
+                													<li><a  href="panels.html">Panels</a></li>
+                											</ul>
+            li.sub-menu
+<<<<<<< HEAD
+              a(data-toggle='tab', href='#experience')
+                i.fa.fa-star-o
+                span Experience
+              //
+                                      <ul class="sub">
+                                          <li><a  href="general.html">General</a></li>
+                                          <li><a  href="buttons.html">Buttons</a></li>
+                                          <li><a  href="panels.html">Panels</a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#reserchpublications')
+                i.fa.fa-th
+                span Research Publications
+              ul.sub
+                  li.smen
+                    a(data-toggle='tab', href='#ss') Scopus/SCI
+                  li
+                    a(data-toggle='tab', href='#ni') National/International
+                  li
+                    a(data-toggle='tab', href='#rc') Reputed/Coference
+                  li
+                    a(data-toggle='tab', href='#jc') Journal/Coference
+                  li
+                    a(data-toggle='tab', href='#cb') Chapters/Books
+            li.sub-menu
+              a(data-toggle='tab', href='#bank')
+                i.fa.fa-university
+=======
+              a(data-toggle='tab', href='#bank')
+                i.fa.fa-bitcoin
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                span Bank Details
+              //
+                											<ul class="sub">
+                													<li><a  href="calendar.html">Calendar</a></li>
+                													<li><a  href="gallery.html">Gallery</a></li>
+                													<li><a  href="todo_list.html">Todo List</a></li>
+                											</ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#aadhar')
+                i.fa.fa-file
+                span Aadhar
+              //
+                											<ul class="sub">
+                													<li class="active"><a  href="blank.html">Blank Page</a></li>
+                													<li><a  href="login.html">Login</a></li>
+                													<li><a  href="lock_screen.html">Lock Screen</a></li>
+                											</ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#passport')
+                i.fa.fa-plane
+                span Passport
+              //
+                											<ul class="sub">
+                													<li><a  href="form_component.html">Form Components</a></li>
+                											</ul>
+<<<<<<< HEAD
+            li.sub-menu
+              a(data-toggle='tab', href='#pan')
+                i.fa.fa-credit-card
+                span Pan Card
+              //
+                                      <ul class="sub">
+                                          <li><a  href="form_component.html">Form Components</a></li>
+                                      </ul>
+=======
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+          // sidebar menu end
+      // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #personaldata.tab-pane.fade.in.active
+<<<<<<< HEAD
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-user
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Personal Data
+                  .personal_details
+                    h3 Personal
+=======
+                  .personal_details
+                    h3 Personal Data
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                    table
+                      tr
+                        td
+                          label#name Your Name 
+                        td
+<<<<<<< HEAD
+                          label.data(id='StaffName',style='margin-left;10px') #{user.StaffName}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Date Of Birth 
+                        td
+                          label.data(id='DateOfBirth',style='margin-left;10px') #{user.DateOfBirth}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+=======
+                          label#wd=user.StaffName
+                        td
+                          label#name Date Of Birth 
+                        td
+                          label#wd=user.DateOfBirth
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                      tr
+                        td
+                          label#name Mother Tongue 
+                        td
+<<<<<<< HEAD
+                          label.data(id='MotherTongue',style='margin-left;10px') #{user.MotherTongue}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Religion 
+                        td
+                          label.data(id='Relegion',style='margin-left;10px') #{user.Relegion}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+=======
+                          label#wd=user.MotherTongue
+                        td
+                          label#name Religion 
+                        td
+                          label#wd=user.Relegion
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                      tr
+                        td
+                          label#name Mobile Number 
+                        td
+<<<<<<< HEAD
+                          label.data(id='MobileNo',style='margin-left;10px') #{user.MobileNo}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Email ID 
+                        td
+                          label.data(id='Email',style='margin-left;10px') #{user.Email}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+=======
+                          label#wd=user.MobileNo
+                        td
+                          label#name Email ID 
+                        td
+                          label#wd=user.Email
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                      tr
+                        td
+                          label#name Caste 
+                        td
+<<<<<<< HEAD
+                          label.data(id='CasteName',style='margin-left;10px') #{user.CasteName}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                  br
+                  br
+                  .personal_details
+                    h3 Address
+                    table
+                      tr
+                        td
+                          p Permanent address
+                      tr
+                        td
+                          label#name Door no: 
+                        td
+                          label.data(id='PermanentDoorno',style='margin-left;10px') #{user.PermanentDoorno}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Street: 
+                        td
+                          label.data(id='PermanentStreet',style='margin-left;10px') #{user.PermanentStreet}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                      tr
+                        td
+                          label#name City: 
+                        td
+                          label.data(id='PermanentCity',style='margin-left;10px') #{user.PermanentCity}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Country: 
+                        td
+                          label.data(id='PermanentCountry',style='margin-left;10px') #{user.PermanentCountry}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                      tr
+                        td
+                          label#name Zip Code: 
+                        td
+                          label.data(id='Permanentzipcode',style='margin-left;10px') #{user.Permanentzipcode}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                    center  
+                      p
+                        input(type='checkbox' id='temp',style='width:15px;height:15px' checked)
+                        |  Use permonent address as temporary address  
+                    table
+                      tr
+                        td
+                          p Temporary address
+                      tr
+                        td
+                          label#name Door no: 
+                        td
+                          label.data(id='TemporaryDoorno',style='margin-left;10px') #{user.TemporaryDoorno}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Street: 
+                        td
+                          label.data(id='TemporaryStreet',style='margin-left;10px') #{user.TemporaryStreet}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                      tr
+                        td
+                          label#name City: 
+                        td
+                          label.data(id='TemporaryCity',style='margin-left;10px') #{user.TemporaryCity}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Country: 
+                        td
+                          label.data(id='TemporaryCountry',style='margin-left;10px') #{user.TemporaryCountry}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                      tr
+                        td
+                          label#name Zip Code: 
+                        td
+                          label.data(id='Temporaryzipcode',style='margin-left;10px') #{user.Temporaryzipcode}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit     
+                    br                   
+                    br
+                    br  
+                  br
+                  br
+                  .personal_details
+                    h3 Professional
+                    table
+                      tr
+                        td
+                          label#name Designation Name 
+                        td
+                          label.data(id='DesignationName',style='margin-left;10px') #{user.DesignationName}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Department Name 
+                        td
+                          label.data(id='DepartmentName',style='margin-left;10px') #{user.DepartmentName}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                      tr
+                        td
+                          label#name Teaching Type 
+                        td
+                          label.data(id='TeachingType',style='margin-left;10px') #{user.TeachingType}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                        td
+                          label#name Date Of Joining
+                        td
+                          label.data(id='DateOfJoining',style='margin-left;10px') #{user.DateOfJoining}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                      tr
+                        td
+                          label#name Staff Code
+                        td
+                          label#wd=user.StaffCode
+                        td
+                          label#name College 
+                        td
+                          label.data(id='College',style='margin-left;10px') #{user.College}
+                          a.edit(href='#',style='color:blue;margin-left:5px')
+                            i.fa.fa-pencil-square-o
+                            span edit
+                  br
+                  br
+
+                      
+                #education.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-book
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Education
+=======
+                          label#wd=user.CasteName
+                        td(align='top')
+                          label#name Address
+                        td
+                          label#wd=user.Address1+','
+                          label#wd=user.Address2
+                  br
+                  br
+                  .personal_details
+                    h3 Education
+                    table
+                      tr
+                        td
+                          label#name Designation Name 
+                        td
+                          label#wd=user.DesignationName
+                        td
+                          label#name Department Name 
+                        td
+                          label#wd=user.DepartmentName
+                      tr
+                        td
+                          label#name Teaching Type 
+                        td
+                          label#wd=user.TeachingType
+                        td
+                          label#name Civil ID 
+                        td
+                          label#wd=user.CivilId
+                      tr
+                        td
+                          label#name Staff Code
+                        td
+                          label#wd=user.StaffCode
+                        td
+                          label#name College 
+                        td
+                          label#wd=user.College
+                  br
+                  br
+                  .personal_details
+                    h3 Others
+                    table
+                      tr
+                        td
+                          label#name PF Number 
+                        td
+                          label#wd=user.PFNumber
+                        td
+                          label#name Pan Card Number 
+                        td
+                          label#wd=user.PanGirNo
+                      tr
+                        td
+                          label#name Account Number 
+                        td
+                          label#wd=user.AccountNo
+                        td
+                          label#name Account Type 
+                        td
+                          label#wd=user.AccountType
+                      tr
+                        td
+                          label#name Bank Name 
+                        td
+                          label#wd=user.BankName
+                        td
+                          label#name Branch 
+                        td
+                          label#wd=user.BankBranch
+                      tr
+                        td
+                          label#name Date Of Joining 
+                        td
+                          label#wd=user.DateOfJoining
+                        td
+                          label#name Date Of Leaving
+                        td
+                          
+                #education.tab-pane.fade
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                  .personal_details
+                    h3 SSC
+                    .col-lg-12.ssc
+                      br
+                      form(method='POST',action='', enctype='multipart/form-data')
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                              td
+<<<<<<< HEAD
+                                input#inputsscy.form-control.input-sm(type='text', value=user.SSC?user.SSC.YearOfPass:'')
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution:  
+                              td
+                                input#inputssci.form-control.input-sm(type='text', value=user.SSC?user.SSC.Institution:'', size='50')
+=======
+                                input#inputsscy.form-control.input-sm(type='text', value=user.SSC.YearOfPass)
+                        .col-lg-6
+                          table
+                            trm
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution:  
+                              td
+                                input#inputssci.form-control.input-sm(type='text', value=user.SSC.Institution, size='50')
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                        center
+                          br
+                          br
+                          br
+                          input#upload-ssc.file-chooser__input.btn.btn-default(type='file',name='uploadsssc[]',style='width:35%;')
+                          br
+                          input#uploadbtn-ssc.btn.btn-info(type='button', value='save')
+<<<<<<< HEAD
+                          if user.SSC
+                            if user.SSC.Certificate
+                              button.btn.btn-info
+                                a(href=user.SSC.Certificate, style='color: white', download) Download 
+=======
+                          if user.SSC.Certificate
+                            button.btn.btn-info
+                              a(href=user.SSC.Certificate, style='color: white', download) Download Certificate
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                  br
+                  br
+                  .personal_details
+                    h3 Intermediate
+                    .col-lg-12.inter
+                      br
+                      form(method='POST',action='', enctype='multipart/form-data')
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                              td
+<<<<<<< HEAD
+                                input#inputintery.form-control.input-sm(type='text', value=user.Inter?user.Inter.YearOfPass:'')
+=======
+                                input#inputintery.form-control.input-sm(type='text', value=user.Inter.YearOfPass)
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution:  
+                              td
+<<<<<<< HEAD
+                                input#inputinteri.form-control.input-sm(type='text', value=user.Inter?user.Inter.Institution:'', size='50')
+=======
+                                input#inputinteri.form-control.input-sm(type='text', value=user.Inter.Institution, size='50')
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                        center
+                          br
+                          br
+                          br
+                          input#upload-inter.file-chooser__input.btn.btn-default(type='file',name='uploadsinter[]' style='width:35%;')
+                          br
+                          input#uploadbtn-inter.btn.btn-info(type='button', value='save')
+<<<<<<< HEAD
+                          if user.Inter
+                            if user.Inter.Certificate
+                              button.btn.btn-info
+                                a(href=user.Inter.Certificate, style='color: white', download) Download 
+=======
+                          if user.Inter.Certificate
+                            button.btn.btn-info
+                              a(href=user.Inter.Certificate, style='color: white', download) Download Certificate
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                  br
+                  br
+                  .personal_details
+                    h3 UG
+                    .col-lg-12.ug
+                      br
+                      form(method='POST',action='', enctype='multipart/form-data')
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                              td
+<<<<<<< HEAD
+                                input#inputugy.form-control.input-sm(type='text', value=user.UG?user.UG.YearOfPass:'')
+=======
+                                input#inputugy.form-control.input-sm(type='text', value=user.UG.YearOfPass)
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution:  
+                              td
+<<<<<<< HEAD
+                                input#inputugi.form-control.input-sm(type='text', value=user.UG?user.UG.Institution:'', size='50')
+=======
+                                input#inputugi.form-control.input-sm(type='text', value=user.UG.Institution, size='50')
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                        center
+                          br
+                          br
+                          br
+                          input#upload-ug.file-chooser__input.btn.btn-default(type='file',name='uploadsug[]' style='width:35%;')
+                          br
+                          input#uploadbtn-ug.btn.btn-info(type='button', value='save')
+<<<<<<< HEAD
+                          if user.UG
+                            if user.UG.Certificate
+                              button.btn.btn-info
+                                a(href=user.UG.Certificate, style='color: white', download) Download 
+=======
+                          if user.UG.Certificate
+                            button.btn.btn-info
+                              a(href=user.UG.Certificate, style='color: white', download) Download Certificate
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                  br
+                  br
+                  .personal_details
+                    h3 PG
+                    center
+                      .col-lg-12.pg
+                        br
+                        form(method='POST',action='', enctype='multipart/form-data')
+                          .col-lg-6
+                            table
+                              tr
+                                td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                                td
+<<<<<<< HEAD
+                                  input#inputpgy.form-control.input-sm(type='text', value=user.PG?user.PG.YearOfPass:'')
+=======
+                                  input#inputpgy.form-control.input-sm(type='text', value=user.PG.YearOfPass)
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                          .col-lg-6
+                            table
+                              tr
+                                td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution:  
+                                td
+<<<<<<< HEAD
+                                  input#inputpgi.form-control.input-sm(type='text', value=user.PG?user.PG.Institution:'', size='50')
+=======
+                                  input#inputpgi.form-control.input-sm(type='text', value=user.PG.Institution, size='50')
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                          center
+                            br
+                            br
+                            input#upload-pg.file-chooser__input.btn.btn-default(type='file',name='uploadspg[]',style='width:35%;')
+                            br
+                            input#uploadbtn-pg.btn.btn-info(type='button', value='save')
+<<<<<<< HEAD
+                            if user.PG
+                              if user.PG.Certificate
+                                button.btn.btn-info
+                                  a(href=user.PG.Certificate, style='color: white', download) Download 
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                  br
+                  br
+                  .personal_details
+                    h3 PhD
+                    center
+                      .col-lg-12.phd
+                        br
+                        form(method='POST',action='', enctype='multipart/form-data')
+                          .col-lg-6
+                            table
+                              tr
+                                td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                                td
+                                  input#inputphdy.form-control.input-sm(type='text', value=user.PHD?user.PHD.YearOfPass:'')
+                          .col-lg-6
+                            table
+                              tr
+                                td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution:  
+                                td
+                                  input#inputphdi.form-control.input-sm(type='text', value=user.PHD?user.PHD.Institution:'', size='50')
+                          center
+                            br
+                            br
+                            input#upload-phd.file-chooser__input.btn.btn-default(type='file',name='uploadsphd[]',style='width:35%;')
+                            br
+                            input#uploadbtn-phd.btn.btn-info(type='button', value='save')
+                            if user.PHD
+                              if user.PHD.Certificate
+                                button.btn.btn-info
+                                  a(href=user.PHD.Certificate, style='color: white', download) Download 
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                  br
+                  br
+                  .personal_details
+                    h3 Other
+                    center
+                      .col-lg-12.other
+                        br
+                        form(method='POST',action='', enctype='multipart/form-data')
+                          .col-lg-6
+                            table
+                              tr
+                                td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                                td
+                                  input#inputothery.form-control.input-sm(type='text', value=user.Other?user.Other.YearOfPass:'')
+                          .col-lg-6
+                            table
+                              tr
+                                td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution:  
+                                td
+                                  input#inputotheri.form-control.input-sm(type='text', value=user.Other?user.Other.Institution:'', size='50')
+                          center
+                            br
+                            br
+                            input#upload-other.file-chooser__input.btn.btn-default(type='file',name='uploadother[]',style='width:35%;')
+                            br
+                            input#uploadbtn-other.btn.btn-info(type='button', value='save')
+                            if user.Other
+                              if user.Other.Certificate
+                                button.btn.btn-info
+                                  a(href=user.Other.Certificate, style='color: white', download) Download
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                  br
+                  br
+                #experience.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-star
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Experience
+                  .personal_details
+                    h3 Add Experience
+                    center
+                      table
+                        tr
+                          td
+                            label#name College: 
+                          td
+                            input.form-control.input-sm#excollege(type='text', name='qualification', style='',size='20')
+                          td
+                            label#name Experience in years : 
+                          td
+                            input.form-control.input-sm#exyears(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name From : 
+                          td
+                            br
+                            input.form-control.input-sm#exfrom(type='date', name='qualification', style='',size='20')
+                          td
+                            br
+                            label#name To : 
+                          td
+                            br
+                            input.form-control.input-sm#exto(type='date', name='qualification', style='',size='20')
+                    center
+                      br
+                      br
+                      input#addbtn-ex.btn.btn-info(type='button', value='ADD')
+                  br
+                  br
+                #ss.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-book
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Scopus/SCI
+                  .personal_details
+                    h3 Add Scopus/SCI Indexed papers
+                    center
+                      table
+                        tr
+                          td
+                            label#name Journal details and title with Page No's: 
+                          td
+                            input.form-control.input-sm#stitle(type='text', name='qualification', style='',size='20')
+                          td
+                            label#name ISSN/ISBN No./SCOPUS No. : 
+                          td
+                            input.form-control.input-sm#sisbnno(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name Whether peer reviewed impact Factor, If any: 
+                          td
+                            br
+                            input.form-control.input-sm#sreviewed(type='text', name='qualification', style='',size='20')
+                          td
+                            br
+                            label#name Specify Author 1/Author 2/Author 3 : 
+                          td
+                            br
+                            input.form-control.input-sm#sauthor(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name Year : 
+                          td
+                            br
+                            input.form-control.input-sm#acyear(type='date', name='qualification', style='',size='20')
+                    center
+                      br
+                      br
+                      input#addbtn-s.btn.btn-info(type='button', value='ADD')
+                  br
+                  br
+
+                #ni.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-book
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 National/International
+                  .personal_details
+                    h3 Add National/International Journal(Non Paid)
+                    center
+                      table
+                        tr
+                          td
+                            label#name Journal details and title with Page No's: 
+                          td
+                            input.form-control.input-sm#ntitle(type='text', name='qualification', style='',size='20')
+                          td
+                            label#name ISSN/ISBN No./SCOPUS No. : 
+                          td
+                            input.form-control.input-sm#nisbnno(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name Whether peer reviewed impact Factor, If any: 
+                          td
+                            br
+                            input.form-control.input-sm#nreviewed(type='text', name='qualification', style='',size='20')
+                          td
+                            br
+                            label#name Specify Author 1/Author 2/Author 3 : 
+                          td
+                            br
+                            input.form-control.input-sm#nauthor(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name Year : 
+                          td
+                            br
+                            input.form-control.input-sm#acnyear(type='date', name='qualification', style='',size='20')
+                    center
+                      br
+                      br
+                      input#addbtn-n.btn.btn-info(type='button', value='ADD')
+                  br
+                  br
+
+                #rc.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-book
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 ReputedConference
+                  .personal_details
+                    h3 Add Reputed Conference Papers
+                    center
+                      table
+                        tr
+                          td
+                            label#name Title with Page No's: 
+                          td
+                            input.form-control.input-sm#rtitle(type='text', name='qualification', style='',size='20')
+                          td
+                            label#name International/National Conference : 
+                          td
+                            input.form-control.input-sm#rconf(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name Details of Coference: 
+                          td
+                            br
+                            input.form-control.input-sm#rdetail(type='text', name='qualification', style='',size='20')
+                          td
+                            br
+                            label#name Specify Author 1/Author 2/Author 3 : 
+                          td
+                            br
+                            input.form-control.input-sm#rauthor(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name Year : 
+                          td
+                            br
+                            input.form-control.input-sm#ryear(type='date', name='qualification', style='',size='20')
+                    center
+                      br
+                      br
+                      input#addbtn-r.btn.btn-info(type='button', value='ADD')
+                  br
+                  br
+
+                #jc.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-book
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Journal/Conference 
+                  .personal_details
+                    h3 Add Journal/Conference Papers
+                    center
+                      table
+                        tr
+                          td
+                            label#name Title with Page No's: 
+                          td
+                            input.form-control.input-sm#jtitle(type='text', name='qualification', style='',size='20')
+                          td
+                            label#name International/National Conference : 
+                          td
+                            input.form-control.input-sm#jconf(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name Details of Coference: 
+                          td
+                            br
+                            input.form-control.input-sm#jdetail(type='text', name='qualification', style='',size='20')
+                          td
+                            br
+                            label#name Specify Author 1/Author 2/Author 3 : 
+                          td
+                            br
+                            input.form-control.input-sm#jauthor(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name Year : 
+                          td
+                            br
+                            input.form-control.input-sm#jyear(type='date', name='qualification', style='',size='20')
+                    center
+                      br
+                      br
+                      input#addbtn-j.btn.btn-info(type='button', value='ADD')                  
+                  br
+                  br
+
+                #cb.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-book
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Chapters/Books 
+                  .personal_details
+                    h3 Add Chapters/Books
+                    center
+                      table
+                        tr
+                          td
+                            label#name Title with Page No's: 
+                          td
+                            input.form-control.input-sm#ctitle(type='text', name='qualification', style='',size='20')
+                          td
+                            label#name Publisher : 
+                          td
+                            input.form-control.input-sm#cpublisher(type='text', name='qualification', style='',size='20')
+                        tr
+                          td
+                            br
+                            label#name ISSN/ISBN NO: 
+                          td
+                            br
+                            input.form-control.input-sm#cisbn(type='text', name='qualification', style='',size='20')
+                          td
+                            br
+                            label#name Specify Author 1/Author 2/Author 3 : 
+                          td
+                            br
+                            input.form-control.input-sm#cauthor(type='text', name='qualification', style='',size='20')
+                        tr
+                          td(align='left')
+                            br
+                            label#name Year : 
+                          td
+                            br
+                            input.form-control.input-sm#cyear(type='date', name='qualification', style='',size='20')
+                    center
+                      br
+                      br
+                      input#addbtn-c.btn.btn-info(type='button', value='ADD')
+                  br
+                  br
+
+
+                #bank.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-university
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Bank
+                  .personal_details
+                    .col-lg-12(style='background-color:white').bank
+                      form(method='post')
+                        br
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Account No:   
+                              td
+                                label.data(id='AccountNo',style='margin-left;10px') #{user.AccountNo}
+                                a.edit(href='#',style='color:blue;margin-left:5px')
+                                  i.fa.fa-pencil-square-o
+                                  span edit
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Account Type:  
+                              td
+                                label.data(id='AccountType',style='margin-left;10px') #{user.AccountType}
+                                a.edit(href='#',style='color:blue;margin-left:5px')
+                                  i.fa.fa-pencil-square-o
+                                  span edit
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Bank Name:  
+                              td
+                                label.data(id='BankName',style='margin-left;10px') #{user.BankName}
+                                a.edit(href='#',style='color:blue;margin-left:5px')
+                                  i.fa.fa-pencil-square-o
+                                  span edit
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Branch:  
+                              td
+                                label.data(id='BankBranch',style='margin-left;10px') #{user.BankBranch}
+                                a.edit(href='#',style='color:blue;margin-left:5px')
+                                  i.fa.fa-pencil-square-o
+                                  span edit
+                        center
+                          br
+                          br
+                          br
+                          input#upload-bank.file-chooser__input.btn.btn-default(type='file',name='uploadsbank[]' style='width:35%;')
+                          br
+                          input#uploadbtn-bank.btn.btn-info(type='button', value='save')
+                          if user.bank
+                            button.btn.btn-info
+                              a(href=user.bank, style='color: white', download) Download Certificate
+                #aadhar.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-file
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Adhar
+                  .personal_details
+                    .col-lg-12(style='background-color:white').adhar
+                      form(method='post')
+                        br
+                        center
+                          .col-lg-12
+                            table
+                              tr
+                                td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Aadhar No:   
+                                td
+                                  label.data(id='Adharno',style='margin-left;10px') #{user.Adharno}
+                                  a.edit(href='#',style='color:blue;margin-left:5px')
+                                    i.fa.fa-pencil-square-o
+                                    span edit
+
+                          br
+                          br
+                          br
+                          input#upload-adhar.file-chooser__input.btn.btn-default(type='file',name='uploadsadhar[]' style='width:35%;')
+                          br
+                          input#uploadbtn-adhar.btn.btn-info(type='button', value='save')
+                          if user.adhar
+                            button.btn.btn-info(style='')
+                              a(href=user.adhar, style='color: white;', download) Download 
+
+                #passport.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-plane
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Passport
+                  .personal_details
+                    .col-lg-12(style='background-color:white').passport
+                      form(method='post')
+                        br
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Passport No:   
+                              td
+                                input#passportno.form-control.input(type='text', value=user.Passportdetails?user.Passportdetails.Passportno:'', style='height: 25px')
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Place of Issue:   
+                              td
+                                input#plsissue.form-control.input(type='text', value=user.Passportdetails?user.Passportdetails.PlaceOfIssue:'', style='height: 25px')
+                        br
+                        br
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Date of Issue:   
+                              td
+                                input#dtofissue.form-control.input(type='date', value=user.Passportdetails?user.Passportdetails.DateOfIssue:'', style='height: 25px')
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Validity Date :   
+                              td
+                                input#validity.form-control.input(type='date', value=user.Passportdetails?user.Passportdetails.Validity:'', style='height: 25px')
+                        br
+                        br
+                        font(color='red')
+                          span.firstLabel(style='margin-left:15px') Note:Please Upload First and Last Page of Passport
+                        br
+                        br
+                        center
+                          input#upload-passport.file-chooser__input.btn.btn-default(type='file',name='uploadspassport[]' style='width:35%;')
+                          br
+                          input#uploadbtn-passport.btn.btn-info(type='button', value='save')
+                          if user.passport
+                            button.btn.btn-info
+                              a(href=user.passport, style='color: white', download) Download
+                #pan.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+    
+                            i.fa.fa-credit-card
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p(style='margin-top:10px').size-h2 Pan Card
+
+                  .personal_details
+                    .col-lg-12(style='background-color:white').pancard
+                      form(method='post')
+                        br
+                        .col-lg-6
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Pandcard No:   
+                              td
+                                label.data(id='PanGirNo',style='margin-left;10px') #{user.PanGirNo}
+                                a.edit(href='#',style='color:blue;margin-left:5px')
+                                  i.fa.fa-pencil-square-o
+                                  span edit
+                        center
+                          br
+                          br
+                          br
+                          input#upload-pancard.file-chooser__input.btn.btn-default(type='file',name='uploadspancard[]' style='width:35%;')
+                          br
+                          input#uploadbtn-pancard.btn.btn-info(type='button', value='save')
+                          if user.pancard
+                            button.btn.btn-info
+                              a(href=user.pancard, style='color: white', download) Download Certificate
+=======
+                            if user.PG.Certificate
+                              button.btn.btn-info
+                                a(href=user.PG.Certificate, style='color: white', download) Download Certificate
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                  br
+                  br
+                #bank.tab-pane.fade
+                  h3 
+                  .col-lg-12
+                    form.file-uploader(method='post', action='', enctype='multipart/form-data')
+                      .file-uploader__message-area
+                        p Select a file to upload
+                      .file-chooser
+                        .progress
+                          .progress-bar.pr-bank(role='progressbar')
+                        input#upload-input(type='file', name='uploads[]', multiple='multiple')
+                        center
+                          if user.bank
+                            button.btn.btn-lg.upload-btn(type='button',disabled) Upload File
+                          else
+                            button.btn.btn-lg.upload-btn(type='button') Upload File
+                            p.fname
+                    center
+                      if user.bank
+                        button.btn.btn-default
+                          a(href=user.bank, download='') Download
+                #aadhar.tab-pane.fade
+                  h3 Upload your Aadhar Card
+                  .col-lg-12
+                    form.file-uploader(method='post', action='', enctype='multipart/form-data')
+                      .file-uploader__message-area
+                        p Select a file to upload
+                      .file-chooser
+                        .progress
+                          .progress-bar.pr-adhar(role='progressbar')
+                        input#upload-inputadhar(type='file', name='uploadsadhar[]', multiple='multiple')
+                        center
+                          if user.adhar
+                            button.btn.btn-lg.upload-btnadhar(type='button',disabled) Upload File
+                          else
+                            button.btn.btn-lg.upload-btnadhar(type='button') Upload File
+                    center
+                      if user.adhar
+                        button.btn.btn-default
+                          a(href=user.adhar, download='') Download
+                #passport.tab-pane.fade
+                  h3 Upload your Passport
+                  .col-lg-12
+                   form.file-uploader(method='post', action='', enctype='multipart/form-data')
+                      .file-uploader__message-area
+                        p Select a file to upload
+                      .file-chooser
+                        .progress
+                          .progress-bar.pr-passport(role='progressbar')
+                        input#upload-inputpassport(type='file', name='uploadspassport[]', multiple='multiple')
+                        center
+                          if user.passport
+                            button.btn.btn-lg.upload-btnpassport(type='button',disabled) Upload File
+                          else
+                            button.btn.btn-lg.upload-btnpassport(type='button') Upload File
+                   center
+                     if user.passport
+                       button.btn.btn-default
+                         a(href=user.passport, download='') Download
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+      // /MAIN CONTENT
+      // main content end
+      //
+        footer start--
+        <footer class="site-footer">
+        <div class="text-center">
+        2014 - Alvarez.is
+        <a href="blank.html#" class="go-top">
+        <i class="fa fa-angle-up"></i>
+        </a>
+        </div>
+        </footer>
+        <!--footer end
+    // js placed at the end of the document so the pages load faster
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='assets/js/jquery.scrollTo.min.js')
+    script(src='assets/js/jquery.nicescroll.js', type='text/javascript')
+    // common script for all pages
+    script(src='assets/js/common-scripts.js')
+    // script for this page
+    script.
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+      });
+    script(src='https://code.jquery.com/jquery-2.2.0.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    script(src='javascripts/jquery.alerts.js', type='text/javascript')
+    script(src='javascripts/jquery.noty.packaged.js', type='text/javascript')
+<<<<<<< HEAD
+    script(src='js/bootstrap-notify.js')
+    script(src='js/bootstrap-notify.min.js')
+=======
+    script(src='javascripts/jquery.statusbar.js', type='text/javascript')
+    script(src='javascripts/upload.js')
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+    script(src='javascripts/education.js')

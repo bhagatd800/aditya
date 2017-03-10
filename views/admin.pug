@@ -1,0 +1,764 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title Admin
+    // Bootstrap core CSS
+    link(href='/assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='/assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/assets/css/style.css', rel='stylesheet')
+    link(href='/assets/css/style-responsive.css', rel='stylesheet')
+    link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css', rel='stylesheet')
+    // change password
+    style.
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      input[type=text],select{
+      width: 100%;
+      padding: 8px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      }
+      .ex{
+      width: 31%;
+      padding: 8px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      }
+      .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      }
+      label{
+      font-weight: bold;
+      }
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='index.html')
+          b
+            img(src='/myhub_logo.png', style='height:55px; width:100px; margin-top:-13px;')
+        // logo end
+        .top-menu
+          ul.nav.pull-right.top-menu
+            li
+              a.logout(href='/logout') Logout
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='home.html')
+                img.img-circle(src='/img/user.jpg', width='80')
+            h5.centered Admin
+            li.mt
+              a.active(data-toggle='tab', href='#dashboard')
+                i.fa.fa-dashboard.fa-fw
+                span DashBoard
+            li.sub-menu
+              a(data-toggle='tab', href='#adduser')
+                i.fa.fa-plus-square.fa-fw
+                span Add User
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#promoteuser')
+                i.fa.fa-hand-o-right.fa-fw
+                span Promote, Delete and Transfer User
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#undoappraisal')
+                i.fa.fa-minus-square.fa-fw
+                span Undo Faculty Appraisal
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#filtration')
+                i.fa.fa-list-alt.fa-fw
+                span Filtration
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#changereviewdate')
+                i.fa.fa-calendar.fa-fw
+                span Change HOD review date
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#notes')
+                i.fa.fa-book.fa-fw
+                span Notes
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+          // sidebar menu end
+      // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #dashboard.tab-pane.fade.in.active
+                  .row
+                    // Page Header
+                    .col-lg-12
+                      h1.page-header Dashboard
+                    // End Page Header
+                  .row
+                    // Welcome
+                    .col-lg-12
+                      .alert.alert-info
+                        i.fa.fa-folder-open
+                        b  Hello ! 
+                        | Welcome Back 
+                        b  Admin 
+                    // end  Welcome
+                  .modal-dialog
+                    .modal-content.col-md-10
+                      .modal-header
+                        h4.modal-title
+                          i.icon-paragraph-justify2
+                          |  Change New Password
+                      form#password_form(method='post', autocomplete='off')
+                        .modal-body.with-padding
+                          .form-group
+                            .row
+                              .col-sm-10
+                                label Old Password
+                                input.form-control(type='password', name='old_password', value='')
+                          .form-group
+                            .row
+                              .col-sm-10
+                                label New Password
+                                input.form-control(type='password', name='password', value='')
+                          .form-group
+                            .row
+                              .col-sm-10
+                                label Confirm password
+                                input.form-control(type='password', name='confirm_pwd', value='')
+                        // end Add popup
+                        .modal-footer
+                          input#btn-pwd.btn.btn-primary(type='submit', name='submit', value='Change Password')
+                // Add User
+                #adduser.tab-pane.fade
+                  .col-lg-12
+                    h1.page-header  Add New Member
+<<<<<<< HEAD
+                  .tab-pane.fade.in.active
+                    ul.nav.nav-tabs.nav-justified
+                      li.active
+                        a(data-toggle='pill', href='#singlemember') Add Single User
+                      li
+                        a(data-toggle='pill', href='#multipleusers') Add Multiple Users
+                    .tab-content
+                      // Promote user
+                      #singlemember.tab-pane.fade.in.active
+                        form(method='post', name='regform')
+                          table(align='center')
+                            tr
+                              td
+                                label Staff Name:
+                              td
+                                input(type='text', name='sname', placeholder='Enter Staff Name')
+                            tr
+                              td
+                                label Guardian Name:
+                              td
+                                input(type='text', name='gname', placeholder='Enter Guardian Name')
+                            tr
+                              td
+                                label Qualification:
+                              td
+                                select
+                                  option B-Tech
+                                  option BSC
+                                  option M-Tech
+                                  option MSC
+                                  option MBA
+                                  option MCA
+                            tr
+                              td
+                                label Designation:
+                              td
+                                select
+                                  option Principal
+                                  option HOD
+                                  option Asst.Proffesor
+                                  option Lab Programmer
+                            tr
+                              td
+                                label Department Name:
+                              td
+                                select
+                                  option H&BS 
+                                  option BSC
+                                  option CSE
+                                  option EEE
+                                  option ECE
+                                  option Mech
+                                  option IT
+                                  option PT
+                                  option Civil
+                            tr
+                              td
+                                label Address:
+                              td
+                                textarea(rows='5', cols='70', placeholder='Enter Address')
+                            tr
+                              td
+                                label City:
+                              td
+                                input(type='text', name='cname', placeholder='Enter City')
+                            tr
+                              td
+                                label State:
+                              td
+                                input(type='text', name='stname', placeholder='Enter State')
+                            tr
+                              td
+                                label Country:
+                              td
+                                input(type='text', name='coname', placeholder='Enter Country')
+                            tr
+                              td
+                                label Pin Code:
+                              td
+                                input(type='text', name='pname', placeholder='Enter Pin Code')
+                            tr
+                              td
+                                label Mobile:
+                              td
+                                input(type='text', name='mobname', placeholder='Enter Pin Code')
+                            tr
+                              td
+                                label Email:
+                              td
+                                input(type='text', name='ename', placeholder='Enter Pin Code')
+                            tr
+                              td
+                                label Gender
+                              td
+                                | Male
+                                input(type='radio', name='r1')
+                                |    Female
+                                input(type='radio', name='r1')
+                            tr
+                              td
+                                label Age:
+                              td
+                                input(type='text', name='age', placeholder='Enter Age')
+                            tr
+                              td
+                                label Religion:
+                              td
+                                input(type='text', name='religion', placeholder='Enter Religion')
+                            tr
+                              td
+                                label Date of Birth:
+                              td
+                                input(type='date', name='dob')
+                            tr
+                              td
+                                br
+                            tr
+                              td
+                                label Date of Joining:
+                              td
+                                input(type='date', name='doj')
+                            tr
+                              td
+                                label Teaching Type
+                              td
+                                | Teaching
+                                input(type='radio', name='t1')
+                                |    Non-Teaching
+                                input(type='radio', name='t1')
+                            tr
+                              td
+                                label Civil Id:
+                              td
+                                input(type='text', name='ciname', placeholder='Enter Civil Id')
+                            tr
+                              td
+                                label Staff Code:
+                              td
+                                input(type='text', name='stcode', placeholder='Enter Staff Code')
+                            tr
+                              td
+                                label College:
+                              td
+                                select
+                                  option Aditya Engineering College
+                                  option Aditya College of Engineering and Technology
+                                  option Aditya College of Engineering
+                            tr
+                              td
+                            tr
+                              td(colspan='2')
+                                center
+                                  button.button.button1(name='regbtn') Submit
+                      #multipleusers.tab-pane.fade
+                        form(id=  'uploadForm'
+                        enctype =  'multipart/form-data'
+                        action =  '/users/uploadxml'
+                        method =  'post')
+                          input(type='file',name='file')
+                          input(type='submit',name='submit',value='upload',id='multipleuser')                  
+=======
+                  form(method='post', name='regform')
+                    table(align='center')
+                      tr
+                        td
+                          label Staff Name:
+                        td
+                          input(type='text', name='sname', placeholder='Enter Staff Name')
+                      tr
+                        td
+                          label Guardian Name:
+                        td
+                          input(type='text', name='gname', placeholder='Enter Guardian Name')
+                      tr
+                        td
+                          label Qualification:
+                        td
+                          select
+                            option B-Tech
+                            option BSC
+                            option M-Tech
+                            option MSC
+                            option MBA
+                            option MCA
+                      tr
+                        td
+                          label Designation:
+                        td
+                          select
+                            option Principal
+                            option HOD
+                            option Asst.Proffesor
+                            option Lab Programmer
+                      tr
+                        td
+                          label Department Name:
+                        td
+                          select
+                            option H&BS 
+                            option BSC
+                            option CSE
+                            option EEE
+                            option ECE
+                            option Mech
+                            option IT
+                            option PT
+                            option Civil
+                      tr
+                        td
+                          label Address:
+                        td
+                          textarea(rows='5', cols='70', placeholder='Enter Address')
+                      tr
+                        td
+                          label City:
+                        td
+                          input(type='text', name='cname', placeholder='Enter City')
+                      tr
+                        td
+                          label State:
+                        td
+                          input(type='text', name='stname', placeholder='Enter State')
+                      tr
+                        td
+                          label Country:
+                        td
+                          input(type='text', name='coname', placeholder='Enter Country')
+                      tr
+                        td
+                          label Pin Code:
+                        td
+                          input(type='text', name='pname', placeholder='Enter Pin Code')
+                      tr
+                        td
+                          label Mobile:
+                        td
+                          input(type='text', name='mobname', placeholder='Enter Pin Code')
+                      tr
+                        td
+                          label Email:
+                        td
+                          input(type='text', name='ename', placeholder='Enter Pin Code')
+                      tr
+                        td
+                          label Gender
+                        td
+                          | Male
+                          input(type='radio', name='r1')
+                          |    Female
+                          input(type='radio', name='r1')
+                      tr
+                        td
+                          label Age:
+                        td
+                          input(type='text', name='age', placeholder='Enter Age')
+                      tr
+                        td
+                          label Religion:
+                        td
+                          input(type='text', name='religion', placeholder='Enter Religion')
+                      tr
+                        td
+                          label Date of Birth:
+                        td
+                          input(type='date', name='dob')
+                      tr
+                        td
+                          br
+                      tr
+                        td
+                          label Date of Joining:
+                        td
+                          input(type='date', name='doj')
+                      tr
+                        td
+                          label Teaching Type
+                        td
+                          | Teaching
+                          input(type='radio', name='t1')
+                          |    Non-Teaching
+                          input(type='radio', name='t1')
+                      tr
+                        td
+                          label Civil Id:
+                        td
+                          input(type='text', name='ciname', placeholder='Enter Civil Id')
+                      tr
+                        td
+                          label Staff Code:
+                        td
+                          input(type='text', name='stcode', placeholder='Enter Staff Code')
+                      tr
+                        td
+                          label College:
+                        td
+                          select
+                            option Aditya Engineering College
+                            option Aditya College of Engineering and Technology
+                            option Aditya College of Engineering
+                      tr
+                        td
+                      tr
+                        td(colspan='2')
+                          center
+                            button.button.button1(name='regbtn') Submit
+                            center
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                // End of Add User
+                // Promote, Delete and Transfer User
+                #promoteuser.tab-pane.fade
+                  .row
+                    // Page Header
+                    .col-lg-12
+                      h1.page-header Promote, Delete  and Transfer User
+                    // End Page Header
+                  .tab-pane.fade.in.active
+                    br
+                    ul.nav.nav-tabs.nav-justified
+                      li.active
+                        a(data-toggle='pill', href='#promote') Promote User
+                      li
+                        a(data-toggle='pill', href='#delete') Delete User
+                      li
+                        a(data-toggle='pill', href='#transfer') Transfer User
+                    .tab-content
+                      // Promote user
+                      #promote.tab-pane.fade.in.active
+                        br
+                        br
+                        br
+                        center
+                          div(style='border-radius: 5px;padding: 20px;background-color: white;width: 50%')
+                            form(method='post', autocomplete='off', action='')
+                              label(style='color: #33001a') Staff Code:
+                              input(type='text', id='', name='scode', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block; border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                              br
+                              label(style='color: #33001a') Promote to:
+                              select(name='promote', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                                option(value='principal') Principal
+                                option(value='hod') HOD
+                                option(value='asstprof') Asst Prof
+                                option(value='assocprof') Assoc Prof
+                              br
+                              br
+                              br
+                              input.btn.btn-primary(type='submit', name='submit', value='Promote')
+                      // End of Promote User
+                      // Delete user
+                      #delete.tab-pane.fade
+                        br
+                        br
+                        br
+                        center
+                          div(style='border-radius: 5px;padding: 20px;background-color: white;width: 50%')
+                            form(action='', method='post', autocomplete='off')
+                              label(style='color: #33001a') Staff Code:
+                              input(type='text', id='', name='scode', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;\
+                              border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                              br
+                              br
+                              br
+                              input.btn.btn-primary(type='submit', name='submit', value='Delete')
+                      // End of Delete user
+                      // Transfer User
+                      #transfer.tab-pane.fade
+                        br
+                        br
+                        br
+                        center
+                          div(style='border-radius: 5px;padding: 20px;background-color: white;width: 50%')
+                            form(action='', method='post', autocomplete='off')
+                              label(style='color: #33001a') Staff Code:
+                              input(type='text', id='', name='scode', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;\
+                              border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                              br
+                              label(style='color: #33001a') Transfer to:
+                              select(name='transfer_clg', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                                option(value='aec') AEC
+                                option(value='acet') ACE
+                                option(value='ace') ACE
+                              select(name='transfer_dep', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                                option(value='agr') AGR & MIN
+                                option(value='civ') CIVIL
+                                option(value='cse') CSE
+                                option(value='ece-i') ECE-I
+                                option(value='ece-ii') ECE-II
+                                option(value='eee') EEE
+                                option(value='h&bs-i') H & BS-I
+                                option(value='h&bs-ii') H & BS-II
+                                option(value='it') IT
+                                option(value='it&mca') IT & MCA
+                                option(value='mech') MECH
+                                option(value='mech-i') MECH-I
+                                option(value='mech-ii') MECH-II
+                                option(value='pt') PT
+                              br
+                              br
+                              br
+                              br
+                              input.btn.btn-primary(type='submit', name='submit', value='Transfer')
+                      // End of Transfer User
+                // End of Promote, Delete and Transfer User
+                // Undo Appraisal Submission
+                #undoappraisal.tab-pane.fade
+                  .row
+                    // Page Header
+                    .col-lg-12
+                      h1.page-header Undo Submission
+                    // End Page Header
+                  .tab-pane.fade.in.active
+                    center
+                      br
+                      br
+                      br
+                      br
+                      div(style='border-radius: 5px;padding: 20px;background-color: white;width: 50%')
+                        form(action='', method='post', autocomplete='off')
+                          label(style='color: #33001a') Staff Code:
+                          input(type='text', id='', name='scode', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;\
+                          border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                          br
+                          br
+                          br
+                          input.btn.btn-primary(type='submit', name='undo', value='Undo the Appraisal')
+                // End of Undo Appraisal Submission
+                // Sorting as per staff code or College or Department
+                #filtration.tab-pane.fade
+                  .row
+                    // Page Header
+                    .col-lg-12
+                      h1.page-header Filtration
+                    // End Page Header
+                  .tab-pane.fade.in.active
+                    center
+                      br
+                      div(style='border-radius: 5px;padding: 20px;background-color: white;width: 50%')
+                        form(action='', method='post', autocomplete='off')
+                          label(style='color: #33001a') Staff Code:
+                          input(type='text', id='', name='scfilter', style='width: 17%;padding: 1px 1px;margin: 8px 0;display: inline-block;\
+                          border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                          input.btn.btn-primary(type='submit', name='filter1', value='Get')
+                          br
+                          br
+                          label(style='color: #33001a') College:
+                          select(name='clgfilter', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                            option(value='aec') AEC
+                            option(value='acet') ACET
+                            option(value='ace') ACE
+                          input.btn.btn-primary(type='submit', name='filter2', value='Get')
+                          br
+                          br
+                          label(style='color: #33001a') Department:
+                          select(name='depfilter', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                            option(value='agr') AGR & MIN
+                            option(value='civ') CIVIL
+                            option(value='cse') CSE
+                            option(value='ece-i') ECE-I
+                            option(value='ece-ii') ECE-II
+                            option(value='eee') EEE
+                            option(value='h&bs-i') H & BS-I
+                            option(value='h&bs-ii') H & BS-II
+                            option(value='it') IT
+                            option(value='it&mca') IT & MCA
+                            option(value='mech') MECH
+                            option(value='mech-i') MECH-I
+                            option(value='mech-ii') MECH-II
+                            option(value='pt') PT
+                          input.btn.btn-primary(type='submit', name='filter3', value='Get')
+                          br
+                          br
+                          br
+                          br
+                  br
+                  br
+                  div(style=' background-color: white; display: none;')
+                // End of Sorting...
+                // Change review date
+                #changereviewdate.tab-pane.fade
+                  .row
+                    // Page Header
+                    .col-lg-12
+                      h1.page-header Change HOD Review Date
+                    // End Page Header
+                  .tab-pane.fade.in.active
+                    center
+                      br
+                      br
+                      br
+                      br
+                      div(style='border-radius: 5px;padding: 20px;background-color: white;width: 50%')
+                        form(action='', method='post', autocomplete='off')
+                          label(style='color: #33001a') Staff Code:
+                          input(type='text', id='', name='scode', style='width: 18%;padding: 1px 1px;margin: 8px 0;display: inline-block;\
+                          border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                          br
+                          br
+                          label(style='color: #33001a') Date of Review:
+                          input(type='date', name='datechng', style='width: 26%;padding: 1px 1px;margin: 8px 0;display: inline-block;\
+                          border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;')
+                          br
+                          br
+                          br
+                          input.btn.btn-primary(type='submit', name='undo', value='Change the review date')
+                // End of Change review date
+                // Notes
+                #notes.tab-pane.fade
+                  .row
+                    // Page Header
+                    .col-lg-12
+                      h1.page-header
+                        span.glyphicon.glyphicon-pencil
+                        |  Notes
+                    // End Page Header
+                  .row
+                    // Welcome
+                    .col-lg-12
+                      .form-group
+                        label Notes
+                        textarea.form-control(rows='5', cols='45')
+                      center
+                        button.btn.btn-primary(type='submit') Save
+                        button.btn.btn-success(type='reset') Reset
+                    // end  Welcome
+                // End of Notes
+      // /MAIN CONTENT
+      // main content end
+      //
+        footer start--
+        <footer class="site-footer">
+        <div class="text-center">
+        2014 - Alvarez.is
+        <a href="blank.html#" class="go-top">
+        <i class="fa fa-angle-up"></i>
+        </a>
+        </div>
+        </footer>
+        <!--footer end
+    // js placed at the end of the document so the pages load faster
+    script(src='/assets/js/jquery.js')
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='/assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='/assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='/assets/js/jquery.scrollTo.min.js')
+    script(src='/assets/js/jquery.nicescroll.js', type='text/javascript')
+    // Page-Level Plugin Scripts
+    script(src='/assets/plugins/morris/raphael-2.1.0.min.js')
+    script(src='/assets/plugins/morris/morris.js')
+    script(src='/assets/scripts/dashboard-demo.js')
+    // common script for all pages
+    script(src='/assets/js/common-scripts.js')
+    // script for this page
+    script.
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+<<<<<<< HEAD
+      $('#multipleuser').click(function(){
+
+      alert('users added successfullyy..');
+      });
+=======
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+      });

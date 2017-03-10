@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    if user
+      p Hello #{user.PinNo}!
+      a(href='/logout') logout
+  block content

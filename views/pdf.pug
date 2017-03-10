@@ -1,0 +1,10 @@
+html
+  body
+    input(type='button',id='sub' value='pdf')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.debug.js')
+  script.
+    if (window.define) delete window.define.amd;
+  script(src='assets/js/jquery.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.28/jspdf.plugin.autotable.js')
+  script(src='/javascripts/pdf.js')  

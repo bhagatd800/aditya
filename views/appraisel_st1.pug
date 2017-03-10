@@ -1,0 +1,839 @@
+doctype html
+html
+  head
+    title Appraisal
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(href='/appraisal_css/QuickAccord.css', rel='stylesheet', type='text/css')
+    link(href='/appraisal_css/semantic.min.css', rel='stylesheet', type='text/css')
+    script(src='/appraisal_js/angscript.js')
+    script(src='/appraisal_js/script.js')
+    // Bootstrap core CSS
+    link(href='/appraisal_css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='/appraisal_font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/appraisal_css/style.css', rel='stylesheet')
+    link(href='/appraisal_css/style-responsive.css', rel='stylesheet')
+    style.
+      h1 { margin-top:40px; text-align:center;}
+      body {
+      font-family: Arial, sans-serif;
+      }
+      header {
+      margin-top:-0px;
+      }
+      .table {
+      width: 100%;
+      }
+      .table thead th {
+      padding: 10px 10px;
+      background: #00adee;
+      font-size: 15px;
+      text-transform: uppercase;
+      vertical-align: top;
+      color: #1D4A5A;
+      font-weight: normal;
+      text-align: left;
+      }
+      .table tbody tr td {
+      padding: 10px;
+      background: #f2f2f2;
+      font-size: 14px;
+      }
+      .add, .edit, .save, .delete {
+      outline: none;
+      background: none;
+      border: none;
+      }
+      .edit, .save, .delete {
+      padding: 5px 10px;
+      cursor: pointer;
+      }
+      .add {
+      float: right;
+      background: transparent;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      font-size: 13px;
+      padding: 0;
+      padding: 3px 5px;
+      cursor: pointer;
+      }
+      .add:hover {
+      background: #ffffff;
+      color: #00adee;
+      }
+      .save {
+      display: none;
+      background: #32AD60;
+      color: #ffffff;
+      }
+      .save:hover {
+      background: #27854a;
+      }
+      .edit {
+      background: #2199e8;
+      color: #ffffff;
+      }
+      .edit:hover {
+      background: #147dc2;
+      }
+      .delete {
+      background: #EC5840;
+      color: #ffffff;
+      }
+      .delete:hover {
+      background: #e23317;
+      }
+      .accordion-content{
+      overflow-y: scroll;
+      }
+      .progress{
+      margin-top: 20px;
+      margin-left: 450px;
+      margin-right:400px;
+      }
+      .fixed_data {
+      margin-left:30px;
+      margin-right: 30px;
+      }
+      .accordion-trigger {
+      background: #2C3E50;
+      }
+  div(ng-app='myapp')
+    // header start
+    header.header.black-bg(ng-controller='ListController1')
+      .sidebar-toggle-box
+        .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+      // logo start
+      a.logo(href='/dashbord')
+        img(src='myhub_logo.png', style='height:6%;width:6%;', alt='MYHUB_LOGO')
+      // logo end
+      .top-menu
+        ul.pull-right.top-menu
+          li(style='width:88px;')
+            a.logout(href='/logout') Logout
+      .progress
+        div(ng-if='progressBar<50')
+          .progress-bar.progress-bar-danger.progress-bar-striped.active(role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='0', style='width:{{progressBar}}%') {{progressBarValue}}
+        div(ng-if='progressBar>=50')
+          .progress-bar.progress-bar-success.progress-bar-striped.active(role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='0', style='width:{{progressBar}}%')
+            | {{progressBarValue}}
+    // header end
+    body.appraisel(ng-app='myapp')
+      br
+      br
+      br
+      br
+      br
+      h1 FACULTY SELF ASSESSMENT FOR ACADEMIC YEAR 
+      ul(style='padding:25px;')
+        li
+          a.accordion-trigger(href='#accordion1', data-accord-group='group1')
+            p(style='color:white;') 1. General Information :
+          #accordion1.accordion-content.collapsed
+            br
+            .fixed_data
+              table.table.data
+                tbody
+                  tr
+                    td.data(width='15%;')
+                      h4 (a) Name in Full :
+                    td.data(style='position:left') Mr.S V V D Jagadeesh
+                  tr
+                    td.data
+                      h4 (b) Department   :
+                    td.data C.S.E.
+            br
+            h3 2. Academic Qualifications : 
+            table.table.data.table-bordered
+              thead
+                tr
+                  th Qualification
+                  th Year of Passing
+                  th Institution
+              tbody
+                tr
+                  td.data UG :
+                  td.data
+                  td.data
+                tr
+                  td.data PG :
+                  td.data
+                  td.data
+                tr
+                  td.data Ph.D :
+                  td.data
+                  td.data
+            .fixed_data
+              table.table.data
+                tbody
+                  tr
+                    td.data
+                      h4
+                        | (a) Additional Qualifications/Fellowships/
+                        br
+                        | Memberships/Certificate Courses  :
+                    td.data
+                  tr
+                    td.data
+                      h4 (b) Area of specialization, if any :
+                    td.data
+                  tr
+                    td.data(width='25%;')
+                      h4 (c) Date of joining :
+                    td.data 02-09-2009
+                  tr
+                    td.data(width='25%;')
+                      h4
+                        | (d) Present designation and date of 
+                        br
+                        | appointment to that designation :
+                    td.data Asst.Proffessor
+            br
+            h3 3. Experience : 
+            br
+            .fixed_data
+              table.table.data
+                tbody
+                  tr
+                    td.data
+                      h4 (a) Industrial experience if any :
+                    td.data
+                  tr
+                    td.data
+                      h4 (b) Teaching experience total :
+                    td.data
+            table.table.data.table-bordered
+              thead
+                tr
+                  th Name of the College
+                  th
+                    | From 
+                    br
+                    | (DD/MM/YYYY)
+                  th
+                    | to 
+                    br
+                    | (DD/MM/YYYY)
+                  th Experience in Years
+              tbody
+                tr
+                  td.data Aditya
+                  td.data
+                  td.data
+                  td.data
+                tr
+                  td.data Other Colleges
+                  td.data
+                  td.data
+                  td.data
+        //
+          <li>
+          <a href="#accordion2" class="accordion-trigger" data-accord-group="group1"><p style="color:white;">2. Academic Qualifications :</p></a>
+          <div id="accordion2" class="accordion-content collapsed">
+          </div>
+          </li>
+          <li>
+          <a href="#accordion3" class="accordion-trigger" data-accord-group="group1"><p style="color:white;">3. Experience :</p></a>
+          <div id="accordion3" class="accordion-content collapsed">
+          </div>
+          </li>
+        li
+          a.accordion-trigger(href='#accordion4', data-accord-group='group1')
+            p(style='color:white;') 2. Subjects Average Pass Percentage :
+          #accordion4.accordion-content.collapsed(ng-controller='ListController2', scroll='')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Subject Name
+                    th Year-Sem-Branch-Sec
+                    th No.of.Students Appeared (A)
+                    th Passed (B)
+                    th Pass Percentage (B/A*100)
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='subjectAverage in subjectAverages')
+                    td.data
+                      input(type='text', ng-model='subjectAverage.subjectName', required='')
+                    td.data
+                      input(type='text', ng-model='subjectAverage.yearSem', required='')
+                    td.data
+                      input(type='text', ng-keyup='calculatePercentage(subjectAverage)', ng-model='subjectAverage.studentsAppeared', required='')
+                    td.data
+                      input(type='text', ng-keyup='calculatePercentage(subjectAverage)', ng-model='subjectAverage.studentsPassed', required='')
+                    td.data
+                      input(type='text', ng-model='subjectAverage.percentage', disabled='disabled')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+              table
+                tr
+                  td Average : 
+                  td
+                    input(type='text', ng-model='subjectAverages[0].average')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='subjectAverages[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='subjectAverages[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{subjectAverages}}
+            p
+        li
+          a.accordion-trigger(href='#accordion5', data-accord-group='group1')
+            p(style='color:white;') 3. Proctoring Subjects Average Pass Percentage :
+          #accordion5.accordion-content.collapsed(ng-controller='ListController3')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th No.of. Stuedents Alloted for Proctoring
+                    th Year-Sem-Branch-Sec
+                    th No.of.Students Appeared (A)
+                    th Passed (B)
+                    th Pass Percentage (B/A*100)
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='proctoringAverage in proctoringAverages')
+                    td.data
+                      input(type='text', ng-model='proctoringAverage.studentAlloted', required='')
+                    td.data
+                      input(type='text', ng-model='proctoringAverage.yearSem', required='')
+                    td.data
+                      input(type='text', ng-keyup='calculatePercentage(proctoringAverage)', ng-model='proctoringAverage.studentsAppeared', required='')
+                    td.data
+                      input(type='text', ng-keyup='calculatePercentage(proctoringAverage)', ng-model='proctoringAverage.studentsPassed', required='')
+                    td.data
+                      input(type='text', ng-model='proctoringAverage.percentage', disabled='disabled')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+              table
+                tr
+                  td Average : 
+                  td
+                    input(type='text', value='{{proctoringAverages[0].average}}', disabled='disabled')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='proctoringAverages[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='proctoringAverages[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{proctoringAverages}}
+        li
+          a.accordion-trigger(href='#accordion6', data-accord-group='group1')
+            p(style='color:white;') 4. Student Feedback (Thoery subjects only) :
+          #accordion6.accordion-content.collapsed(ng-controller='ListController4')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Subject Name
+                    th Year-Sem-Branch-Sec
+                    th No.of.Students
+                    th Passed (B)
+                    th Percentage
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='studentFeedback in studentFeedbacks')
+                    td.data
+                      input(type='text', ng-model='studentFeedback.subjectName', required='')
+                    td.data
+                      input(type='text', ng-model='studentFeedback.yearSem', required='')
+                    td.data
+                      input(type='text', ng-keyup='calculatePercentage(studentFeedback)', ng-model='studentFeedback.studentsAppeared', required='')
+                    td.data
+                      input(type='text', ng-keyup='calculatePercentage(studentFeedback)', ng-model='studentFeedback.studentsPassed', required='')
+                    td.data
+                      input(type='text', ng-model='studentFeedback.percentage', disabled='disabled')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+              table
+                tr
+                  td Average : 
+                  td
+                    input(type='text', value='{{studentFeedbacks[0].average}}', disabled='disabled')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='studentFeedbacks[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='studentFeedbacks[0].facultyComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button') Save
+            // {{studentFeedbacks}}
+        li
+          a.accordion-trigger(href='#accordion7', data-accord-group='group1')
+            p(style='color:white;') 5. Research Publication & Academic Contributions :
+          #accordion7.accordion-content.collapsed(ng-controller='ListController5')
+            form
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Type Of Research Papers
+                    th No.of.Papers
+                    th Maximum Self Assesment Marks
+                    th
+                      | Obtained Self Assesment Marks 
+                      br
+                      | (Maxim)
+                tbody
+                  tr
+                    td.data
+                      | 1 Scopus/SCI indexed papers/Chapters/Books
+                    td.data
+                      input(type='text', ng-model='researchPublications[0].no_Paper', required='')
+                    td.data
+                      input(type='text', value='20', disabled='disabled', required='')
+                    td.data
+                      input(type='text', ng_model='researchPublications[0].obtainedMarks', required='')
+                  tr
+                    td.data
+                      | 1 National/International Journals (Non Paid)
+                    td.data
+                      input(type='text', ng-model='researchPublications[1].no_Paper', required='')
+                    td.data
+                      input(type='text', value='15', disabled='disabled', required='')
+                    td.data
+                      input(type='text', ng_model='researchPublications[1].obtainedMarks', required='')
+                  tr
+                    td.data
+                      | 1 Reputed Conference Papers
+                    td.data
+                      input(type='text', ng-model='researchPublications[2].no_Paper', required='')
+                    td.data
+                      input(type='text', value='10', disabled='disabled', required='')
+                    td.data
+                      input(type='text', ng_model='researchPublications[2].obtainedMarks', required='')
+                  tr
+                    td.data
+                      | 1 Journals/Conference Papers
+                    td.data
+                      input(type='text', ng-model='researchPublications[3].no_Paper', required='')
+                    td.data
+                      input(type='text', value='5', disabled='disabled', required='')
+                    td.data
+                      input(type='text', ng_model='researchPublications[3].obtainedMarks', required='')
+                  tr
+                    td.data
+                      | No Journal/Conference Papers
+                    td.data
+                      input(type='text', ng-model='researchPublications[4].no_Paper', required='')
+                    td.data
+                      input(type='text', value='0', disabled='disabled', required='')
+                    td.data
+                      input(type='text', ng_model='researchPublications[4].obtainedMarks', required='')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='researchPublications[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='researchPublications[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{researchPublications}}
+            br
+        li
+          a.accordion-trigger(href='#accordion8', data-accord-group='group1')
+            p(style='color:white;') 6. Scopus/SCI Indexed papers :
+          #accordion8.accordion-content.collapsed(ng-controller='ListController6')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Journal Details & Title with page numbers
+                    th
+                      | ISSN/
+                      br
+                      | ISBN No/
+                      br
+                      | SCOPUS No
+                    th
+                      | Whether peer reviewed 
+                      br
+                      | imapct factor if any
+                    th
+                      | Specify Author1/
+                      br
+                      | Author2/
+                      br
+                      | Author3
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='scopusDetail in scopusDetails')
+                    td.data
+                      input(type='text', ng-model='scopusDetail.JournalDetail', required='')
+                    td.data
+                      input(type='text', ng-model='scopusDetail.JournalNumber', required='')
+                    td.data
+                      input(type='text', n='', ng-model='scopusDetail.reviewDetail', required='')
+                    td.data
+                      input(type='text', ng-model='scopusDetail.author', required='')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='scopusDetails[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='scopusDetails[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{scopusDetails}}
+            br
+        li
+          a.accordion-trigger(href='#accordion9', data-accord-group='group1')
+            p(style='color:white;') 7. National/Intrenational Journals (Non Paid) :
+          #accordion9.accordion-content.collapsed(ng-controller='ListController7')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Journal Details & Title with page numbers
+                    th
+                      | ISSN/
+                      br
+                      | ISBN No/
+                      br
+                      | SCOPUS No
+                    th
+                      | Whether peer reviewed 
+                      br
+                      | imapct factor if any
+                    th
+                      | Specify Author1/
+                      br
+                      | Author2/
+                      br
+                      | Author3
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='nationalJournal in nationalJournals')
+                    td.data
+                      input(type='text', ng-model='nationalJournal.JournalDetail', required='')
+                    td.data
+                      input(type='text', ng-model='nationalJournal.JournalNumber', required='')
+                    td.data
+                      input(type='text', ng-model='nationalJournal.reviewDetail', required='')
+                    td.data
+                      input(type='text', ng-model='nationalJournal.author', required='')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='nationalJournals[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='nationalJournals[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{nationalJournals}}
+            br
+        li
+          a.accordion-trigger(href='#accordion10', data-accord-group='group1')
+            p(style='color:white;') 8. Reputed Conference Papers :
+          #accordion10.accordion-content.collapsed(ng-controller='ListController8')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Title with page numbers
+                    th
+                      | International/
+                      br
+                      | National Conference
+                    th Details of Conference
+                    th
+                      | Specify Author1/
+                      br
+                      | Author2/Author3
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='reputedConference in reputedConferences')
+                    td.data
+                      input(type='text', ng-model='reputedConference.title', required='')
+                    td.data
+                      input(type='text', ng-model='reputedConference.type', required='')
+                    td.data
+                      input(type='text', ng-model='reputedConference.detail', required='')
+                    td.data
+                      input(type='text', ng-model='reputedConference.author', required='')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='reputedConferences[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='reputedConferences[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{reputedConferences}}
+            br
+        li
+          a.accordion-trigger(href='#accordion11', data-accord-group='group1')
+            p(style='color:white;') 9. Journal/Conference Papers :
+          #accordion11.accordion-content.collapsed(ng-controller='ListController9')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Title with page numbers
+                    th
+                      | International/
+                      br
+                      | National Conference
+                    th Details of Journals/Conference
+                    th
+                      | Specify Author1/
+                      br
+                      | Author2/Author3
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='journalConference in journalConferences')
+                    td.data
+                      input(type='text', ng-model='journalConference.title', required='')
+                    td.data
+                      input(type='text', ng-model='journalConference.type', required='')
+                    td.data
+                      input(type='text', ng-model='journalConference.detail', required='')
+                    td.data
+                      input(type='text', ng-model='journalConference.author', required='')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='journalConferences[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='journalConferences[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{journalConferences}}
+            br
+        li
+          a.accordion-trigger(href='#accordion12', data-accord-group='group1')
+            p(style='color:white;') 10. Chapter/Books:
+          #accordion12.accordion-content.collapsed(ng-controller='ListController10')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Title with page numbers
+                    th Publisher
+                    th
+                      | ISSN/
+                      br
+                      | ISBN No.
+                    th
+                      | Specify Author1/
+                      br
+                      | Author2/Author3
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='chapterBook in chapterBooks')
+                    td.data
+                      input(type='text', ng-model='chapterBook.title', required='')
+                    td.data
+                      input(type='text', ng-model='chapterBook.publisher', required='')
+                    td.data
+                      input(type='text', ng-model='chapterBook.issnNumber', required='')
+                    td.data
+                      input(type='text', ng-model='chapterBook.author', required='')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='chapterBooks[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='chapterBooks[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{chapterBooks}}
+        li
+          a.accordion-trigger(href='#accordion13', data-accord-group='group1')
+            p(style='color:white;')
+              | 11. Workshops, Teaching-Learning-Evaluation Technology Programs, Faculty Development Programs : STTP (Short Term Training Programs) attended :
+          #accordion13.accordion-content.collapsed(ng-controller='ListController11')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Program
+                    th Duration
+                    th Date & Place
+                    th Organization
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='workshop in workshops')
+                    td.data
+                      input(type='text', ng-model='workshop.program', required='')
+                    td.data
+                      input(type='text', ng-model='workshop.duration', required='')
+                    td.data
+                      input(type='text', ng-model='workshop.datePlace', required='')
+                    td.data
+                      input(type='text', ng-model='workshop.organization', required='')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='workshops[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='workshops[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{workshops}}
+        li
+          div(ng-controller='ListController12')
+            a.accordion-trigger(href='#accordion14', data-accord-group='group1', ng-click='import_data()')
+              p(style='color:white;') 12. Staff Appraisal - Points Earned :
+            #accordion14.accordion-content.collapsed
+              form(ng-submit='addNew()')
+                table.table.data.table-bordered
+                  thead
+                    tr
+                      th Subjects Average Pass %
+                      th Proctoring Students Average Pass %
+                      th Studets Feedback %
+                      th Research Publications & Academic contributions
+                      // <th><input type="submit" class="btn btn-primary add pull-right" value="Add New"></th>
+                  tbody
+                    // <tr ng-repeat="personalDetail in personalDetails">
+                    td.data
+                      input(type='text', ng-model='subAverage', required='', disabled='disabled')
+                    td.data
+                      input(type='text', ng-model='proctoringAverage', disabled='disabled')
+                    td.data
+                      input(type='text', ng-model='studentFeedback', disabled='disabled')
+                    td.data
+                      input(type='text', ng-model='', required='')
+                    //
+                      <td>
+                      <input  type="button" class="btn btn-danger pull-right delete" ng-click="removeRow($index)" value="Remove">
+                      </td>
+                table
+                  tr
+                    td Total (out of 80) : 
+                    td
+                      input(type='text', value='{{personalDetails[0].average}}', disabled='disabled')
+              div(style='clear: both')
+                h3(style='float: left') Facultiy Comment
+                h3(style='float: right') HOD Comment
+              .form-group(style='clear:both')
+                textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='facultyComment', style='float:left; width:550px')
+                textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='hodComment', style='float:right;width:550px')
+              div
+                br
+                br
+                br
+                br
+              button.btn.btn-default(type='button', ng-click='save()') Save
+              // {{personalDetails}}
+            div(ng-controller='ListController13')
+        li
+          a.accordion-trigger(href='#accordion15', data-accord-group='group1')
+            p(style='color:white;') 13. Additional Responsibilites in the Department/College :
+          #accordion15.accordion-content.collapsed(ng-controller='ListController13')
+            form(ng-submit='addNew()')
+              table.table.data.table-bordered
+                thead
+                  tr
+                    th Responsibility
+                    th Assigned By
+                    th Duration
+                    th
+                      input.btn.btn-primary.add.pull-right(type='submit', value='Add New')
+                tbody
+                  tr(ng-repeat='addition in additions')
+                    td.data
+                      input(type='text', ng-model='addition.responsibility', required='')
+                    td.data
+                      input(type='text', ng-model='addition.assignedBy', required='')
+                    td.data
+                      input(type='text', ng-model='addition.duration', required='')
+                    td
+                      input.btn.btn-danger.pull-right.delete(type='button', ng-click='removeRow($index)', value='Remove')
+            div(style='clear: both')
+              h3(style='float: left') Facultiy Comment
+              h3(style='float: right') HOD Comment
+            .form-group(style='clear:both')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='additions[0].facultyComment', style='float:left; width:550px')
+              textarea#comment.form-control.ng-pristine.ng-valid.ng-empty.ng-touched(rows='3', ng-model='additions[0].hodComment', style='float:right;width:550px')
+            div
+              br
+              br
+              br
+              br
+            button.btn.btn-default(type='button', ng-click='save()') Save
+            // {{additions}}
+      center
+        button.btn.btn-default(type='submit', style=' background-color:#00CC00; color:white; font-size:16px;margin-top:-4%;') Promote
+        button.btn.btn-default(type='submit', style=' background-color:#CC0000; color:white; font-size:16px; margin-top:-4%;') Reject
+      script(src='/appraisal_js/semantic.min.js')
+      script(src='/appraisal_js/semantic.editableRecord.js')
+      script(type='text/javascript', src='/appraisal_js/QuickAccord.js')
+      script(type='text/javascript').
+        $(".accordion-trigger").QuickAccord();

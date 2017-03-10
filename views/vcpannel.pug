@@ -1,0 +1,897 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css')
+    link(rel='stylesheet', type='text/css', href='css/accord.css')
+    link(href='http://www.jqueryscript.net/css/jquerysctipttop.css', rel='stylesheet', type='text/css')
+    title My_Data
+    link(rel='stylesheet', type='text/css', href='vcpannel/css/semantic.ui.min.css')
+    link(rel='stylesheet', type='text/css', href='vcpannel/css/prism.css')
+    link(rel='stylesheet', type='text/css', href='vcpannel/css/calendar-style.css')
+    link(rel='stylesheet', type='text/css', href='vcpannel/css/style.css')
+    link(rel='stylesheet', type='text/css', href='vcpannel/css/pignose.calendar.css')
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href='css/fonts/font_roboto/roboto.css')
+    link(rel='stylesheet', type='text/css', href='css/dhtmlxcalendar.css')
+    script(src='js/dhtmlxcalendar.js')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+    script.
+      $(function() {
+      $('#wrapper .version strong').text('v' + pignoseCalendar.VERSION);
+      function onClickHandler(date, obj) {
+      /**
+      * @date is an array which be included dates(clicked date at first index)
+      * @obj is an object which stored calendar interal data.
+      * @obj.calendar is an element reference.
+      * @obj.storage.activeDates is all toggled data, If you use toggle type calendar.
+      */
+      var $calendar = obj.calendar;
+      var $box = $calendar.parent().siblings('.box').show();
+      var text = 'You choose date ';
+      var temp;
+      var temp2;
+      var temp3;
+      var temp4;
+      if(date[0] !== null) {
+      text += date[0].format('DD-MM-YYYY');
+      temp= date[0].format('MM-DD-YYYY');
+      temp2= date[0].format('MM-DD-YYYY');
+      temp3= date[0].format('MM-DD-YYYY');
+      temp4=date[0].format('DD-MM-YYYY');
+      temp=moment(temp).subtract(5, 'days').format('YYYY-MM-DD'); // 01/09/2017
+      temp2=moment(temp2).subtract(10, 'days').format('YYYY-MM-DD'); // 01/09/2017
+      temp3=moment(temp3).subtract(15, 'days').format('YYYY-MM-DD'); // 01/09/2017
+      document.getElementById("demo").value=temp;
+      document.getElementById("demo2").value = temp2;
+      document.getElementById("demo3").value=temp3;
+      document.getElementById("demo4").innerHTML=temp4;
+      }
+
+      $("#revdate").click(function(){
+
+        if(temp!==null){
+            //alert(temp);
+            var princi=$('#demo').val();
+            var hod=$('#demo2').val();
+            var faculty=$('#demo3').val();
+
+          $.post("/reviewdate",{vcdate:temp4,principal:princi,hoddate:hod,facultydate:faculty}).done(function(data, textStatus, jqXHR) 
+           {           
+           
+           }).fail(function(jqXHR, textStatus, errorThrown) 
+           {
+          });
+          alert("Review date changed");
+        }
+      });
+
+
+      if(date[0] !== null && date[1] !== null) {
+      text += ' ~ ';
+      } else if(date[0] === null && date[1] == null) {
+      text += 'nothing';
+      }
+      if(date[1] !== null) {
+      text += date[1].format('DD-MM-YYYY');
+      }
+      $box.text(text);
+      }
+      // Color theme type Calendar
+      $('.calendar-dark').pignoseCalendar({
+      theme: 'dark', // light, dark
+      select: onClickHandler
+      });
+      $('.menu .item').tab();
+      });
+    style.
+      .input-calendar {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      height: 3.2em;
+      line-height: 3.2em;
+      font: inherit;
+      padding: 0 1.2em;
+      border: 1px solid #d8d8d8;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      -o-box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      -moz-box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      }
+      .btn-calendar {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      height: 3.2em;
+      line-height: 3.2em;
+      background-color: #52555a;
+      margin: 0 auto;
+      font-weight: 600;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      -o-box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      -moz-box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      }
+      .btn-calendar:hover {
+      background-color: #5a6268;
+      }
+      #rcorners2 {
+      border-radius: 25px;
+      border: 2px solid #73AD21;
+      padding: 20px;
+      }
+      .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 6px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      }
+      .button1 {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      .file-uploader {
+      background-color: #dbefe9;
+      border-radius: 3px;
+      color: #242424;
+      }
+      .file-uploader__message-area {
+      font-size: 18px;
+      padding: 1em;
+      text-align: center;
+      color: #377a65;
+      }
+      .file-list {
+      background-color: white;
+      font-size: 16px;
+      }
+      .file-list__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .file-list li {
+      height: 50px;
+      line-height: 50px;
+      margin-left: .5em;
+      border: none;
+      overflow: hidden;
+      }
+      .removal-button {
+      width: 20%;
+      border: none;
+      background-color: #d65d38;
+      color: white;
+      }
+      .removal-button::before {
+      content: "X";
+      }
+      .removal-button:focus {
+      outline: 0;
+      }
+      .file-chooser {
+      padding: 1em;
+      transition: background-color 1s, height 1s;
+      }
+      .file-chooser p {
+      font-size: 18px;
+      padding-top: 1em;
+      }
+      .file-uploader {
+      max-width: 400px;
+      height: auto;
+      margin: 2em auto;
+      }
+      .file-uploader * {
+      display: block;
+      }
+      .file-uploader input[type=submit] {
+      margin-top: 2em;
+      float: right;
+      }
+      .file-list {
+      margin: 0 auto;
+      max-width: 90%;
+      }
+      .file-list__name {
+      max-width: 70%;
+      float: left;
+      }
+      .removal-button {
+      display: inline-block;
+      height: 100%;
+      float: right;
+      }
+      .file-chooser {
+      width: 90%;
+      margin: .5em auto;
+      }
+      .file-chooser__input {
+      margin: 0 auto;
+      }
+      .file-uploader__submit-button {
+      width: 100%;
+      border: none;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #72bfa7;
+      color: white;
+      }
+      .file-uploader__submit-button:hover {
+      background-color: #a7d7c8;
+      }
+      .file-list li:after, .file-uploader:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .hidden {
+      display: none;
+      }
+      .hidden input {
+      display: none;
+      }
+      .error {
+      background-color: #d65d38;
+      color: white;
+      }
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      }
+      table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      }
+      td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      }
+      tr:nth-child(even) {
+      background-color: #dddddd;
+      }
+      .wrapper {
+      max-width: 1200px;
+      margin: 40px 0 0 0;
+      }
+      .wrapper > h1 { text-align: center; }
+      .wrapper > h1 span {
+      border-bottom: 2px solid #49a4d9;
+      display: inline-block;
+      padding: 0 10px 10px;
+      color: #49a4d9;
+      transition: all 0.5s linear;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      }
+      .row a {
+      text-decoration: none;
+      color: black;
+      }
+      .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      border: medium none;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: 39px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+      .success-text {
+      color: #82b33a;
+      }
+      .bg-danger {
+      background-color: #FF7857 !important;
+      color: #FFF !important;
+      }
+      .danger-text {
+      color: #d15b3d;
+      }
+      .bg-lovender {
+      background-color: #8075C4 !important;
+      color: #FFF !important;
+      }
+      .lovender-text {
+      color: #6a5fb1;
+      }
+      .bg-info {
+      background-color: #7ACBEE !important;
+      color: #FFF !important;
+      }
+      .info-text {
+      color: #3ca0cb;
+      }
+      .size-h1 {
+      font-size: 20px;
+      }
+      .panel-icon p.text {
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      }
+      .panel-icon i {
+      text-align: left;
+      }
+      .panel-icon i {
+      text-align: left;
+      }
+      .text-large {
+      font-size: 50px;
+      }
+      .text-large {
+      font-size: 50px;
+      }
+      
+      .glyphicon, .fa {
+      font-size: 50px;
+      }
+      .glyphicon-off {
+      font-size: 20px;
+      }
+      
+      .panel:hover {
+      transform: scale(1.2);
+      transition-duration: 0.3s;
+      }
+      .header .top-menu ul li a {
+      background-color: #2C3E50;
+      border: 1px solid #2C3E50;
+      }
+      .header .top-menu ul li {
+      border-color: 1px solid #2C3E50;
+      }
+    script(type='text/javascript').
+      $(document).ready(function(){
+      $(".first_tab").champ();
+      $(".accordion_example").champ({
+      plugin_type :  "accordion",
+      side : "left",
+      active_tab : "3",
+      controllers : "true"
+      });
+      $(".second_tab").champ({
+      plugin_type :  "tab",
+      side : "right",
+      active_tab : "1",
+      controllers : "false"
+      });
+      $(".third_tab").champ({
+      plugin_type :  "tab",
+      side : "",
+      active_tab : "4",
+      controllers : "true",
+      ajax : "true",
+      show_ajax_content_in_tab : "4",
+      content_path : "html.txt"
+      });
+      });
+  body(onload='doOnLoad();')
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='dashbord')
+          b
+            img(src='myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+        .top-menu
+          ul.nav.pull-right.top-menu
+            li
+              a.logout(href='/logout') Logout
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/dashbord')
+                if user.profilepic
+                  img.img-circle(src=user.profilepic, width='80')
+                else
+                  img.img-circle(src='img/user.jpg', width='80')
+            h5.centered 
+              p.sname= user.StaffName
+            
+            li.mt
+              a.active(data-toggle='tab', href='#personaldata')
+                i.fa.fa-user
+                span Appraisal
+            li.mt
+              a(data-toggle='tab', href='#notice')
+                i.fa.fa-user
+                span Notice
+            li.mt
+              a(data-toggle='tab', href='#wall')
+                i.fa.fa-user
+                span Wall
+            
+            //
+              <li class="sub-menu">
+              <a data-toggle="tab" href="#education">
+              <i class="fa fa-book"></i>
+              <span>Education</span>
+              </a><!--
+              <ul class="sub">
+              <li><a  href="general.html">General</a></li>
+              <li><a  href="buttons.html">Buttons</a></li>
+              <li><a  href="panels.html">Panels</a></li>
+              </ul>
+              </li>
+              <li class="sub-menu">
+              <a data-toggle="tab" href="#bank">
+              <i class="fa fa-bitcoin"></i>
+              <span>Bank Details</span>
+              </a><!--
+              <ul class="sub">
+              <li><a  href="calendar.html">Calendar</a></li>
+              <li><a  href="gallery.html">Gallery</a></li>
+              <li><a  href="todo_list.html">Todo List</a></li>
+              </ul>
+              </li>
+              <li class="sub-menu">
+              <a data-toggle="tab" href="#aadhar">
+              <i class="fa fa-file"></i>
+              <span>Aadhar</span>
+              </a><!--
+              <ul class="sub">
+              <li class="active"><a  href="blank.html">Blank Page</a></li>
+              <li><a  href="login.html">Login</a></li>
+              <li><a  href="lock_screen.html">Lock Screen</a></li>
+              </ul>
+              </li>
+              <li class="sub-menu">
+              <a data-toggle="tab" href="#passport">
+              <i class="fa fa-plane"></i>
+              <span>Passport</span>
+              </a><!--
+              <ul class="sub">
+              <li><a  href="form_component.html">Form Components</a></li>
+              </ul>
+              </li>
+          // sidebar menu end
+      // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #personaldata.tab-pane.fade.in.active
+                  center
+                    .container
+                      ul.nav.nav-tabs.nav-justified
+                        li.active
+                          a(data-toggle='pill', href='#home') FACULTY
+                        li
+                          a(data-toggle='pill', href='#menu1') HOD
+                        li
+                          a(data-toggle='pill', href='#menu2') Review Date
+                      .tab-content
+                        #home.tab-pane.fade.in.active
+                          h3 FACULTY LIST
+                          .wrapper
+                            .tab_wrapper.first_tab
+                              ul.tab_list
+                                li.active AEC
+                                li AECT
+                                li ACE
+                              .content_wrapper
+                                .tab_content.active
+                                  table
+                                    tr
+                                      center
+                                        th FACULTY LIST
+                                        th
+                                          center OPTIONS
+                                    if aec
+                                      each member in aec
+                                        tr
+<<<<<<< HEAD
+                                          td #{member.StaffName}
+                                          td
+                                            center
+                                              a(href="/appraisalform/appraisalVCReview/"+member._id)
+=======
+                                          td jagadeesh
+                                          td
+                                            center
+                                              a(href="/appraisal3")
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                                                button.btn.btn-default(type='submit', style=' background-color:#00aeed; color:white; font-size:16px;') REVIEW
+                                              a(href="")
+                                                button.btn.btn-default(type='submit', style=' background-color:#00CC00; color:white; font-size:16px;') APROVE
+                                              a(href="")
+                                                button.btn.btn-default(type='submit', style=' background-color:#CC0000; color:white; font-size:16px;') REJECT
+                                      else
+                                        h2 no data found
+
+                                .tab_content
+                                  .tab_content.active
+                                  table
+                                    tr
+                                      center
+                                        th FACULTY LIST
+                                        th
+                                          center OPTIONS
+                                    if acet
+                                      each member in acet
+                                        tr
+<<<<<<< HEAD
+                                          td #{member.StaffName}
+                                          td
+                                            center
+                                              a(href="/appraisalform/appraisalVCReview/"+member._id)
+=======
+                                          td #{member.name}
+                                          td
+                                            center
+                                              a(href="/appraisal/" + member._id)
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                                                button.btn.btn-default(type='submit', style=' background-color:#00aeed; color:white; font-size:16px;') REVIEW
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#00CC00; color:white; font-size:16px;') APROVE
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#CC0000; color:white; font-size:16px;') REJECT
+                                      else
+                                        h2 No data found
+
+                                .tab_content
+                                  .tab_content.active
+                                  table
+                                    tr
+                                      center
+                                        th FACULTY LIST
+                                        th
+                                          center OPTIONS
+                                    if ace
+                                      each member in ace
+                                        tr
+<<<<<<< HEAD
+                                          td #{member.StaffName}
+                                          td
+                                            center
+                                              a(href="/appraisalform/appraisalVCReview/"+member._id+"/"+member.College)
+=======
+                                          td #{member.name}
+                                          td
+                                            center
+                                              a(href="/appraisal/" + member._id)
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                                                button.btn.btn-default(type='submit', style=' background-color:#00aeed; color:white; font-size:16px;') REVIEW
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#00CC00; color:white; font-size:16px;') APROVE
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#CC0000; color:white; font-size:16px;') REJECT
+                                      else
+                                        h2 No data found
+
+                        #menu1.tab-pane.fade
+                          table
+                            tr
+                              center
+                                th HOD LIST
+                                th
+                                  center OPTIONS
+                            if hodsdata
+                                      each member in hodsdata.aec
+                                        tr
+<<<<<<< HEAD
+                                          td #{member.StaffName}
+                                          td
+                                            center
+                                              a(href="/appraisalform/appraisalVCReview/"+member._id)
+=======
+                                          td #{member.name}
+                                          td
+                                            center
+                                              a(href="/appraisal/" + member._id)
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                                                button.btn.btn-default(type='submit', style=' background-color:#00aeed; color:white; font-size:16px;') REVIEW
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#00CC00; color:white; font-size:16px;') APROVE
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#CC0000; color:white; font-size:16px;') REJECT
+                                      each member in hodsdata.acet
+                                        tr
+<<<<<<< HEAD
+                                          td #{member.StaffName}
+                                          td
+                                            center
+                                              a(href="/appraisalform/appraisalVCReview/"+member._id)
+=======
+                                          td #{member.name}
+                                          td
+                                            center
+                                              a(href="/appraisal/" + member._id)
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                                                button.btn.btn-default(type='submit', style=' background-color:#00aeed; color:white; font-size:16px;') REVIEW
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#00CC00; color:white; font-size:16px;') APROVE
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#CC0000; color:white; font-size:16px;') REJECT
+                                      each member in hodsdata.ace
+                                        tr
+<<<<<<< HEAD
+                                          td #{member.StaffName}
+                                          td
+                                            center
+                                              a(href="/appraisalform/appraisalVCReview/"+member._id)
+=======
+                                          td #{member.name}
+                                          td
+                                            center
+                                              a(href="/appraisal/" + member._id)
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                                                button.btn.btn-default(type='submit', style=' background-color:#00aeed; color:white; font-size:16px;') REVIEW
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#00CC00; color:white; font-size:16px;') APROVE
+                                              a(href="/appraisal/" + member._id)
+                                                button.btn.btn-default(type='submit', style=' background-color:#CC0000; color:white; font-size:16px;') REJECT
+                                      
+                                        
+                            
+                          // <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        #menu2.tab-pane.fade
+                          #wrapper
+                            .well
+                              #theme.article(style='width: 100%; overflow: hidden;')
+                                .calendar-dark(style='width: 470px; float: left;margin-bottom: 30px;')
+                                br
+                                br
+                                .box(style='margin-left: 620px;margin-bottom: 20px;')
+                                .t(style='margin-left: 620px;margin-top: 20px; margin-right: 120px;margin-bottom:20px')
+                                  table
+                                    tr
+                                      td VICE-CHAIRMAN
+                                      td#demo4
+                                    tr
+                                      td PRINCIPAL
+                                      td
+                                        input#demo(type='date')
+                                    tr
+                                      td HOD
+                                      td
+                                        input#demo2(type='date')
+                                    tr
+                                      td FACULTY
+                                      td
+                                        input#demo3(type='date')
+                                button#revdate.btn.btn-primary.btn-lg(type='button') Submit
+                #notice.tab-pane.fade
+                  .row
+                    // Page Header
+                    .col-lg-12
+                      h1.page-header
+                        span.glyphicon.glyphicon-pencil
+                        |  Notice
+                    // End Page Header
+                  .row
+                    // Welcome
+                    .col-lg-12
+                      .form-group
+                        label Notes
+                        textarea.form-control(rows='5', cols='45')
+                      center
+                        button.btn.btn-primary(type='submit') Post
+                        
+                #wall.tab-pane.fade(autoscrool='off')
+                  br
+                  .row.dashboard-stats.container
+                    .col-md-3.col-sm-6
+                      a(href='/mydata')
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span CSE
+                            p.size-h1 Wall
+                    .col-md-3.col-sm-6
+                      a(href='/mypolicy')
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-danger
+                            
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span ECE
+                            p.size-h1 Wall
+                    .col-md-3.col-sm-6
+                      a(href='/mycampus')
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+                            
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span EEE
+                            p.size-h1 Wall
+                    .col-md-3.col-sm-6
+                      a(href='/mycareer')
+                        section.panel.panel-box
+                          .panel-left.panel-icon(style='background-color:#FFB74D;')
+                           
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span IT
+                            p.size-h1 Wall
+                    .col-md-3.col-sm-6
+                      a(href='/myfinance')
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-info
+                           
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span MECH
+                            p.size-h1 Wall
+                    .col-md-3.col-sm-6
+                      a(href='/myfinance')
+                        section.panel.panel-box
+                          .panel-left.panel-icon(style='background-color:#FFB74D;')
+                           
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span CIVIL
+                            p.size-h1 Wall
+                    .col-md-3.col-sm-6
+                      a(href='/myfinance')
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+                           
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span PT
+                            p.size-h1 Wall
+                    .col-md-3.col-sm-6
+                      a(href='/myfinance')
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-info
+                           
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span AGRI
+                            p.size-h1 Wall
+                    .col-md-3.col-sm-6
+                      a(href='/myfinance')
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+                           
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span MIN
+                            p.size-h1 Wall
+                
+                #bank.tab-pane.fade
+                  h3 Upload your Bank PassBook
+                  .col-lg-12
+                    form.file-uploader(method='post', action='', enctype='multipart/form-data')
+                      .file-uploader__message-area
+                        p Select a file to upload
+                      .file-chooser
+                        input.file-chooser__input.btn.btn-default(type='file', style='width:100%;')
+                      input.file-uploader__submit-button(type='submit', value='Upload')
+                    center
+                      button.btn.btn-default
+                        a(href='', download='') Download
+                #aadhar.tab-pane.fade
+                  h3 Upload your Aadhar Card
+                  .col-lg-12
+                    form.file-uploader(method='post', action='', enctype='multipart/form-data')
+                      .file-uploader__message-area
+                        p Select a file to upload
+                      .file-chooser
+                        input.file-chooser__input.btn.btn-default(type='file')
+                      input.file-uploader__submit-button(type='submit', value='Upload')
+                    center
+                      button.btn.btn-default
+                        a(href='', download='') Download
+                #passport.tab-pane.fade
+                  h3 Upload your Passport
+                  .col-lg-12
+                    form.file-uploader(method='post', action='', enctype='multipart/form-data')
+                      .file-uploader__message-area
+                        p Select a file to upload
+                      .file-chooser
+                        input.file-chooser__input.btn.btn-default(type='file')
+                      input.file-uploader__submit-button(type='submit', value='Upload')
+                    center
+                      button.btn.btn-default
+                        a(href='', download='') Download
+      // /MAIN CONTENT
+      // main content end
+      //
+        footer start--
+        <footer class="site-footer">
+        <div class="text-center">
+        2014 - Alvarez.is
+        <a href="blank.html#" class="go-top">
+        <i class="fa fa-angle-up"></i>
+        </a>
+        </div>
+        </footer>
+        <!--footer end
+    // js placed at the end of the document so the pages load faster
+    script(src='http://code.jquery.com/jquery-3.0.0.min.js')
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='assets/js/jquery.ui.touch-punch.min.js')
+    script(src='assets/js/jquery.scrollTo.min.js')
+    script.include(type='text/javascript', src='assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='assets/js/jquery.nicescroll.js', type='text/javascript')
+    script(type='text/javascript', src='vcpannel/js/moment.min.js')
+    script(type='text/javascript', src='vcpannel/js/pignose.calendar.js')
+    // common script for all pages
+    script(src='assets/js/common-scripts.js')
+    // script for this page
+    script(type='text/javascript', src='js/jquery.multipurpose_tabcontent.js')
+    script.
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+      });
+    

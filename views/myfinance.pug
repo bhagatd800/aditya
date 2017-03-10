@@ -1,0 +1,744 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title My_Finance
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+    style.
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      .file-uploader {
+      background-color: #dbefe9;
+      border-radius: 3px;
+      color: #242424;
+      }
+      .file-uploader__message-area {
+      font-size: 18px;
+      padding: 1em;
+      text-align: center;
+      color: #377a65;
+      }
+      .file-list {
+      background-color: white;
+      font-size: 16px;
+      }
+      .file-list__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .file-list li {
+      height: 50px;
+      line-height: 50px;
+      margin-left: .5em;
+      border: none;
+      overflow: hidden;
+      }
+      .removal-button {
+      width: 20%;
+      border: none;
+      background-color: #d65d38;
+      color: white;
+      }
+      .removal-button::before {
+      content: "X";
+      }
+      .removal-button:focus {
+      outline: 0;
+      }
+      .file-chooser {
+      padding: 1em;
+      transition: background-color 1s, height 1s;
+      }
+      .file-chooser p {
+      font-size: 18px;
+      padding-top: 1em;
+      }
+      .file-uploader {
+      max-width: 400px;
+      height: auto;
+      margin: 2em auto;
+      }
+      .file-uploader * {
+      display: block;
+      }
+      .file-uploader input[type=submit] {
+      margin-top: 2em;
+      float: right;
+      }
+      .file-list {
+      margin: 0 auto;
+      max-width: 90%;
+      }
+      .file-list__name {
+      max-width: 70%;
+      float: left;
+      }
+      .removal-button {
+      display: inline-block;
+      height: 100%;
+      float: right;
+      }
+      .file-chooser {
+      width: 90%;
+      margin: .5em auto;
+      }
+      .file-chooser__input {
+      margin: 0 auto;
+      }
+      .file-uploader__submit-button {
+      width: 100%;
+      border: none;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #72bfa7;
+      color: white;
+      }
+      .file-uploader__submit-button:hover {
+      background-color: #a7d7c8;
+      }
+      .file-list li:after, .file-uploader:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .hidden {
+      display: none;
+      }
+      .hidden input {
+      display: none;
+      }
+      .error {
+      background-color: #d65d38;
+      color: white;
+      }
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      }
+      .personal_details {
+      background-color: white;
+      border-left:4px solid #fd9f1b;
+      }
+      .personal_details h3 {
+      padding: 10px;
+      }
+<<<<<<< HEAD
+      .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border: medium none;
+      }
+       .panel{
+        height: 30px;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .panel-box .size-h1 {
+      margin-top:7px;
+      }
+      .panel-box .fa {
+      margin-top:9px;
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+      .bg-info {
+      background-color: #7ACBEE !important;
+      color: #FFF !important;
+      }
+      .success-text {
+      color: #82b33a;
+      }
+      #name {
+      color: #B4886B;
+      font-weight: bold;
+      float: left;
+      margin-left:40px;
+      font-size:15px;
+      }
+      #wd
+      {
+      margin-left:0px;
+      font-weight: bold;
+      font-family: Arial;
+      }
+=======
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='/dashbord')
+          b
+            img(src='myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+        .top-menu
+          ul.nav.pull-right.top-menu
+            li
+              a.logout(href='/logout') Logout
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/dashbord')
+                if user.profilepic
+                  img.img-circle(src=user.profilepic, width='80')
+                else
+                  img.img-circle(src='img/user.jpg', width='80')
+            h5.centered 
+              p.sname= user.StaffName
+            li.mt
+              a.active(data-toggle='tab', href='#payslip')
+                i.fa.fa-file-text
+                span Pay Slip
+<<<<<<< HEAD
+            li.sub-menu
+              a(data-toggle='tab', href='#salary')
+                i.fa.fa-money
+                span Salary
+            li.sub-menu
+=======
+            li.mt
+              a(data-toggle='tab', href='#salary')
+                i.fa.fa-money
+                span Salary
+            li.mt
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+              a(data-toggle='tab', href='#sdf')
+                i.fa.fa-file-text-o
+                span SDF
+                  // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #payslip.tab-pane.fade.in.active
+<<<<<<< HEAD
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-info
+    
+                            i.fa.fa-file-text
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Pay Slip
+                    
+                  h3 
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #salary.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-info
+    
+                            i.fa.fa-money
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1  Salary
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #sdf.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-info
+    
+                            i.fa.fa-file-text-o
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 SDF
+                  br
+                  br                    
+                  br
+                  center 
+                    .container(style='background-color: white;width: 60%;height:%;border-radius: 20px')
+                      br
+                      form(method='post', name='sdf' action='sdfsubmit')
+                        table
+                          tbody
+                            tr
+                              td(colspan='2')
+                                h3 Personal Information
+                                br
+                            tr
+                              td
+                                label#name FullName:
+                              td
+                                label#wd=user.StaffName
+                            tr
+                              td
+                                label#name Father's  Name
+                                if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='fname', value=userr.FathersName  style='width: 225px')
+                                else
+                                  td
+                                    label#wd
+                                       input(type='text', name='fname', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Gender:
+                              td
+                                label#wd=user.Sex
+                            tr
+                              td
+                                label#name Date Of Birth:
+                              td
+                                label#wd=user.DateOfBirth
+                            tr
+                              td
+                                label#name PAN:
+                              td
+                                label#wd=user.PanGirNo
+                            tr
+                              td
+                                label#name PinNo:
+                              td
+                                label#wd=user.PinOrZipCode
+                            tr
+                              td
+                                label#name Building Name:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='bname', value=userr.BuildingName  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='bname', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name D No:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='dno', value=userr.Dno  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='dno', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Street:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='sname', value=userr.Street  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='sname', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name city:
+                              td
+                                label#wd=user.City
+                            tr
+                              td
+                                label#name Mobile No:
+                              td
+                                label#wd=user.MobileNo
+                            tr
+                              td
+                                label#name Email Id:
+                              td
+                                label#wd=user.Email
+                            tr
+                              td(colspan='2')
+                                h3 Saving Details
+                                br
+                            tr
+                              td
+                                label#name Life Insurance Premium:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='lip', value=userr.Lif  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='lip', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Health Insurance Premium:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='hip', value=userr.Hif  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='hip', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Public Provident Fund:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='ppf', value=userr.Ppf  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='ppf', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Amount of Interest on borrowed capital for Home Loan:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='ihl', value=userr.Ihl  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='ihl', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Amount of Principal component on borrowed capital for Home Loan:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='phl', value=userr.Phl  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='phl', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Tution fees paid during the year(max for 2 children):
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='tf', value=userr.TutionFee  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='tf', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Amount of Investment on National saving certificate (VIII Issue):
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='ins', value=userr.Insc  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='ins', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Amount of Investment on Borrowed capital for Education Loan for Higher:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='iel', value=userr.Iel  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='iel', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Any other Investments (please specify):
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='aoi', value=userr.Aoi  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='aoi', value=''  style='width: 225px')
+                            tr
+                              td(colspan='2')
+                                h3 Others
+                                br
+                            tr
+                              td
+                                label#name Own House/Rented House:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='ht', value=userr.HouseType  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='ht', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name If Rented House monthly rent paid:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='mrp', value=userr.MonthlyRent  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='mrp', value=''  style='width: 225px')
+                            tr
+                              td(colspan='2')
+                                h3 Others Income Details
+                                br
+                            tr
+                              td
+                                label#name If new employee previous salary details:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='npsd', value=userr.PreviousSalary  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='npsd', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Income from House property (Rent received):
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='ihp', value=userr.IncomeFromHouse  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='ihp', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Any other Income (specify):
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='oi', value=userr.OtherIncome  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='oi', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Address of House for loan taken
+                              td
+                                label#wd
+                            tr
+                              td
+                                label#name Building Name:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='lbname', value=userr.LoanBuildingName  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='lbname', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name D No:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='ldno', value=userr.LoanDno  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='ldno', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Street:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='lst', value=userr.LoanStreet  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='lst', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name City:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='lcity', value=userr.LoanCity  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='lcity', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Pin:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='lpno', value=userr.LoanPin  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='lpno', value=''  style='width: 225px')
+                            br
+                            tr
+                              td
+                                label#name Date:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='dt', value=userr.Date  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='dt', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Place:
+                              if userr
+                                  td
+                                    label#wd
+                                       input(type='text', name='lpname', value=userr.Place  style='width: 225px')
+                              else
+                                td
+                                  label#wd
+                                     input(type='text', name='lpname', value=''  style='width: 225px')
+                            tr
+                              td
+                                label#name Signature:
+                              td
+                                label#wd 
+                        label#wd
+                          input(type='checkbox', name='cbox', style='width: px')
+                          |    I SOLEMNY DECLARE THAT TO THE BEST OF MY KNOWLEDGE AND BELIEF THE  INFORMATION GIVEN ABOVE ARE CORRECT AND COMPLETE.
+                        br
+                        br
+                        input.btn.btn-info(type='submit', name='sbtn', value='Save', style='margin-left : 5%;width: 20%')
+                        input.btn.btn-info(type='submit', name='vd', value='View & Download', style='margin-left : 5%;width: 20%', onclick='window.print()')
+
+
+                #transport.tab-pane.fade
+                  h3 transport
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                
+=======
+                  h3 Pay Slip
+                #salary.tab-pane.fade
+                  h3  Salary
+                #sdf.tab-pane.fade
+                  h3 Saving Declaration Form
+                #transport.tab-pane.fade
+                  h3 transport
+                #insurance.tab-pane.fade
+                  h3 insurance
+                #payroll.tab-pane.fade
+                  h3 payroll
+                #advance.tab-pane.fade
+                  h3 advance
+                #exitpolicy.tab-pane.fade
+                  h3 exitpolicy
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+      // /MAIN CONTENT
+      // main content end
+      //
+        footer start--
+        <footer class="site-footer">
+        <div class="text-center">
+        2014 - Alvarez.is
+        <a href="blank.html#" class="go-top">
+        <i class="fa fa-angle-up"></i>
+        </a>
+        </div>
+        </footer>
+        <!--footer end
+    // js placed at the end of the document so the pages load faster
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='assets/js/jquery.scrollTo.min.js')
+    script(src='assets/js/jquery.nicescroll.js', type='text/javascript')
+    // common script for all pages
+    script(src='assets/js/common-scripts.js')
+    // script for this page
+    script.
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+      });

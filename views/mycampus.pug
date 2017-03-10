@@ -1,0 +1,954 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title My_Campus
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+<<<<<<< HEAD
+    // Page-Level CSS
+    link(href='assets/plugins/dataTables/dataTables.bootstrap.css', rel='stylesheet')
+=======
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+    style.
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      .file-uploader {
+      background-color: #dbefe9;
+      border-radius: 3px;
+      color: #242424;
+      }
+      .file-uploader__message-area {
+      font-size: 18px;
+      padding: 1em;
+      text-align: center;
+      color: #377a65;
+      }
+      .file-list {
+      background-color: white;
+      font-size: 16px;
+      }
+      .file-list__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .file-list li {
+      height: 50px;
+      line-height: 50px;
+      margin-left: .5em;
+      border: none;
+      overflow: hidden;
+      }
+      .removal-button {
+      width: 20%;
+      border: none;
+      background-color: #d65d38;
+      color: white;
+      }
+      .removal-button::before {
+      content: "X";
+      }
+      .removal-button:focus {
+      outline: 0;
+      }
+      .file-chooser {
+      padding: 1em;
+      transition: background-color 1s, height 1s;
+      }
+      .file-chooser p {
+      font-size: 18px;
+      padding-top: 1em;
+      }
+      .file-uploader {
+      max-width: 400px;
+      height: auto;
+      margin: 2em auto;
+      }
+      .file-uploader * {
+      display: block;
+      }
+      .file-uploader input[type=submit] {
+      margin-top: 2em;
+      float: right;
+      }
+      .file-list {
+      margin: 0 auto;
+      max-width: 90%;
+      }
+      .file-list__name {
+      max-width: 70%;
+      float: left;
+      }
+      .removal-button {
+      display: inline-block;
+      height: 100%;
+      float: right;
+      }
+      .file-chooser {
+      width: 90%;
+      margin: .5em auto;
+      }
+      .file-chooser__input {
+      margin: 0 auto;
+      }
+      .file-uploader__submit-button {
+      width: 100%;
+      border: none;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #72bfa7;
+      color: white;
+      }
+      .file-uploader__submit-button:hover {
+      background-color: #a7d7c8;
+      }
+      .file-list li:after, .file-uploader:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .hidden {
+      display: none;
+      }
+      .hidden input {
+      display: none;
+      }
+      .error {
+      background-color: #d65d38;
+      color: white;
+      }
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      }
+      .personal_details {
+      background-color: white;
+      border-left:4px solid #fd9f1b;
+      }
+      .personal_details h3 {
+      padding: 10px;
+      }
+<<<<<<< HEAD
+      #name {
+      color: #B4886B;
+      font-weight: bold;
+      float: left;
+      margin-left:20px;
+      font-size:15px;
+      }
+      #wd
+      {
+      margin-left: 10px;
+      font-weight: bold;
+      font-family: Arial;
+      }
+      .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border: medium none;
+      }
+      
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .panel-box .size-h1 {
+      margin-top:7px;
+      }
+      .panel-box .fa {
+      margin-top:9px;
+      }
+      .bg-lovender {
+      background-color: #8075C4 !important;
+      color: #FFF !important;
+      }
+      .lovender-text {
+      color: #6a5fb1;
+      }
+      
+=======
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='/dashbord')
+          b
+            img(src='myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+        .top-menu
+          ul.nav.pull-right.top-menu
+            li
+              a.logout(href='logout') Logout
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/dashbord')
+                if user.profilepic
+                  img.img-circle(src=user.profilepic, width='80')
+                else
+                  img.img-circle(src='img/user.jpg', width='80')
+            h5.centered 
+              p.sname= user.StaffName
+            li.mt
+              a.active(data-toggle='tab', href='#finder')
+                i.fa.fa-filter
+                span Finder
+            li.sub-menu
+              a(data-toggle='tab', href='#gatepass')
+                i.fa.fa-map-marker
+                span Gate Pass
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#guestpass')
+                i.fa.fa-male
+                span Guest Pass
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#vehiclepass')
+                i.fa.fa-car
+                span Vehicle Pass
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#hallbooking')
+                i.fa.fa-home
+                span Hall Booking
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#tickets')
+                i.fa.fa-tags
+                span Tickets
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+<<<<<<< HEAD
+              a(data-toggle='tab', href='#lostandfound')
+=======
+              a(data-toggle='tab', href='#lost&found')
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+                i.fa.fa-bar-chart-o
+                span Lost & Found
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#guestroom')
+                i.fa.fa-suitcase
+                span Guest Room
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#vehiclebooking')
+                i.fa.fa-taxi
+                span Vehicle Booking
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+            li.sub-menu
+              a(data-toggle='tab', href='#banner')
+                i.fa.fa-bookmark
+                span Banner
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+          // sidebar menu end
+      // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #finder.tab-pane.fade.in.active
+<<<<<<< HEAD
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-filter
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 finder
+                  
+                  .row
+                    .col-lg-12
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th Staff Code
+                                  th Name
+                                  th Phone Number
+                                  th Email
+  
+                              tbody
+                                if staffdetails
+                                  each member in staffdetails
+                                    tr.odd.gradeA
+                                      td #{member.StaffCode}
+                                      td #{member.StaffName}
+                                      td #{member.MobileNo}
+                                      td #{member.Email}
+                                                      // End Finder
+                #gatepass.tab-pane.fade.align
+                    .row.dashboard-stats.container
+                      .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-map-marker
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Gate pass
+                    if user.Role=='staff'
+                      center            
+                        h3 Staff Out Pass
+                        |                           
+                        .container(style='background-color: white;width: 70%;height:70%;border-radius: 20px')
+                          br
+                          form(method='post', name='fgp' action='gatepasssubmit')
+                            .col-md-6
+                              table
+                                tbody
+                                  tr
+                                    td
+                                      label#name Name:
+                                    td
+                                      label#wd=user.StaffName
+                                  tr
+                                    td
+                                      label#name College:
+                                    td
+                                      label#wd=user.College 
+                                  tr
+                                    td
+                                      label#name Department:
+                                    td
+                                      label#wd=user.DepartmentName
+                                  tr
+                                    td
+                                      label#name Designation:
+                                    td
+                                      label#wd=user.DesignationName
+                                  tr
+                                    td
+                                      label#name Time:
+                                    td
+                                      label#wd
+                                        input(type='Time', name='gptime', style='border-radius: 0px;border-left: 8px;border-top: 8px;')
+                            .col-md-6
+                              table
+                                tr
+                                    td
+                                      label#name Staff Code:
+                                    td
+                                      label#wd=user.StaffCode
+                                tr
+                                  td
+                                    label#name Reason:
+                                  td
+                                    label#wd
+                                      textarea(rows='2', cols='16',name='gpreason' style='border-radius: 0px')
+                                tr
+                                  td
+                                    label#name Date:
+                                  td
+                                    label#wd
+                                      input(type='Date', name='gpdate', style='border-radius: 0px;border-left: 2px;border-top: 2px')
+                                tr
+                                  td(colspan='4')
+                                    br
+                                    input.btn.btn-info(type='submit', name='gpsubmit', value='Apply for Gate Pass', style='margin-left : 30%')
+                                    br
+                                    br
+                    else if user.Role=='HOD'
+                      center
+                        br
+                        .container
+                            ul.nav.nav-tabs.nav-justified
+                              li.active
+                                a(data-toggle="pill", href="#home") Faculty Reportees
+                              |       
+                              li
+                                a(data-toggle="pill", href="#menu1") Self Gate Pass
+                            |   
+                            |   
+                            .tab-content
+                              #home.tab-pane.fade.in.active
+                                br
+                                table.table-striped(style="font-family: arial, sans-serif;\
+                                border-collapse: collapse;\
+                                width: 100%;")
+                                  tr
+                                    center
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") FACULTY LIST
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") DATE
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") TIME
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") REASON
+                                      |       
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;")
+                                        center OPTIONS
+                                  | 
+                                  if gatepassdetails
+                                    each member in gatepassdetails  
+                                      tr
+                                        td(style="border: 1px solid #dddddd;\
+                                        text-align: left;\
+                                        padding: 8px;")
+                                          | #{member.Name}
+                                          span.badge #{member.Count}
+                                        |     
+                                        td(style="border: 1px solid #dddddd;\
+                                        text-align: left;\
+                                        padding: 8px;") #{member.Date}
+                                        |     
+                                        td(style="border: 1px solid #dddddd;\
+                                        text-align: left;\
+                                        padding: 8px;") #{member.Time}
+                                        |     
+                                        td(style="border: 1px solid #dddddd;\
+                                        text-align: left;\
+                                        padding: 8px;") #{member.Reason}
+                                        |      
+                                        td(style="border: 1px solid #dddddd;\
+                                        text-align: left;\
+                                        padding: 8px;")
+                                          input.id(type='hidden' value=member._id)
+                                          center.approveorreject
+                                            button.approve.btn.btn-default(type="button", style=" background-color:#89bf3d; color:white; font-size:16px;") APPROVE
+                                            |  
+                                            |          
+                                            button.reject.btn.btn-default(type="button", style=" background-color:#ef2323; color:white; font-size:16px;") REJECT
+                                      
+                                  |   
+
+                              #menu1.tab-pane.fade
+
+                                center
+                                  br
+                                  br
+                                  .container(style='background-color: white;width: 70%;height:70%;border-radius: 20px')
+                                    br
+                                    br
+                                    form(method='post', name='fgp' action='gatepasssubmit')
+                                      .col-md-6
+                                        table
+                                          tbody
+                                            tr
+                                              td
+                                                label#name Name:
+                                              td
+                                                label#wd=user.StaffName
+                                            tr
+                                              td
+                                                label#name College:
+                                              td
+                                                label#wd=user.College 
+                                            tr
+                                              td
+                                                label#name Department:
+                                              td
+                                                label#wd=user.DepartmentName
+                                            tr
+                                              td
+                                                label#name Designation:
+                                              td
+                                                label#wd=user.DesignationName
+                                            tr
+                                              td
+                                                label#name Time:
+                                              td
+                                                label#wd
+                                                  input(type='Time', name='gptime', style='border-radius: 0px;border-left: 8px;border-top: 8px;')
+                                      .col-md-6
+                                        table
+                                          tr
+                                              td
+                                                label#name Staff Code:
+                                              td
+                                                label#wd=user.StaffCode
+                                          tr
+                                            td
+                                              label#name Reason:
+                                            td
+                                              label#wd
+                                                textarea(rows='2', cols='16',name='gpreason' style='border-radius: 0px')
+                                          tr
+                                            td
+                                              label#name Date:
+                                            td
+                                              label#wd
+                                                input(type='Date', name='gpdate', style='border-radius: 0px;border-left: 2px;border-top: 2px')
+                                          tr
+                                            td(colspan='4')
+                                              br
+                                              input.btn.btn-info(type='submit', name='gpsubmit', value='Apply for Gate Pass', style='margin-left : 30%')
+                                              br
+                                              br
+                                          // Self Gate Pass From Faculty have to be pasted
+                    else if user.Role=='principal'
+                      center
+                        br
+                        .container
+                            ul.nav.nav-tabs.nav-justified
+                              li.active
+                                a(data-toggle="pill", href="#home") Faculty Reportees
+                              |       
+                              li
+                                a(data-toggle="pill", href="#menu1") HOD Reportees
+                            |   
+                            |   
+                            .tab-content
+                              #home.tab-pane.fade.in.active
+                                br
+                                table.table-striped(style="font-family: arial, sans-serif;\
+                                border-collapse: collapse;\
+                                width: 100%;")
+                                  tr
+                                    center
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") FACULTY LIST
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") DATE
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") TIME
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") REASON
+                                      |       
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;")
+                                        center OPTIONS
+                                  | 
+                                  if gatepassdetails
+                                    each member in gatepassdetails
+
+                                      if member.Role=='staff'
+                                        tr   
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;")
+                                            | #{member.Name}
+                                            span.badge #{member.Count}
+                                          |     
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;") #{member.Date}
+                                          |     
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;") #{member.Time}
+                                          |     
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;") #{member.Reason}
+                                          |      
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;")
+                                            input.id(type='hidden' value=member._id)
+                                            center.approveorreject
+                                              button.approve.btn.btn-default(type="button", style=" background-color:#89bf3d; color:white; font-size:16px;") APPROVE
+                                              |  
+                                              |          
+                                              button.reject.btn.btn-default(type="button", style=" background-color:#ef2323; color:white; font-size:16px;") REJECT
+                                      
+                                      
+                                  
+                              |   
+
+                              #menu1.tab-pane.fade
+
+                                center 
+                                  br
+                                table.table-striped(style="font-family: arial, sans-serif;\
+                                border-collapse: collapse;\
+                                width: 100%;")
+                                  tr
+                                    center
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") FACULTY LIST
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") DATE
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") TIME
+                                      |           
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;") REASON
+                                      |       
+                                      th(style="border: 1px solid #dddddd;\
+                                      text-align: left;\
+                                      padding: 8px;")
+                                        center OPTIONS
+                                  |   
+                                  if gatepassdetails
+                                    each member in gatepassdetails
+
+                                      if member.Role=='HOD'
+                                        tr
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;")
+                                            | #{member.Name}
+                                            span.badge #{member.Count}
+                                          |     
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;") #{member.Date}
+                                          |     
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;") #{member.Time}
+                                          |     
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;") #{member.Reason}
+                                          |      
+                                          td(style="border: 1px solid #dddddd;\
+                                          text-align: left;\
+                                          padding: 8px;")
+                                            input.id(type='hidden' value=member._id)
+                                            center.approveorreject
+                                              button.approve.btn.btn-default(type="button", style=" background-color:#89bf3d; color:white; font-size:16px;") APPROVE
+                                              |  
+                                              |          
+                                              button.reject.btn.btn-default(type="button", style=" background-color:#ef2323; color:white; font-size:16px;") REJECT
+
+                                  
+                              |   
+                 
+
+
+                #guestpass.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-male
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Guest pass
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #vehiclepass.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-car
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 vehicle pass
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #hallbooking.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-home
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Hall booking
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #tickets.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-tags
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Ticket
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #lostandfound.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-bar-chart-o
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Lost&Found
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #guestroom.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-suitcase
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Guest room
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #vehiclebooking.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-taxi
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Vehicle booking
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+                #banner.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-6
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-bookmark
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            p.size-h1 Banner
+                  br
+                  br                    
+                  br
+                  br
+                  br
+                  center 
+                    img(src='https://maxcdn.icons8.com/office/PNG/80/Transport/worker_with_roadblock-80.png' title='Worker With Roadblock' width='80')
+                    br
+                    br
+                    b
+                      p Under Development
+=======
+                  h3 finder
+                #gatepass.tab-pane.fade
+                  h3 gatepass
+                #guestpass.tab-pane.fade
+                  h3 guestpass
+                #vehiclepass.tab-pane.fade
+                  h3 vehiclepass
+                #hallbooking.tab-pane.fade
+                  h3 hallbooking
+                #tickets.tab-pane.fade
+                  h3 tickets
+                .tab-pane.fade(id='lost&found')
+                  h3 lost&found
+                #guestroom.tab-pane.fade
+                  h3 guestroom
+                #vehiclebooking.tab-pane.fade
+                  h3 vehiclebooking
+                #banner.tab-pane.fade
+                  h3 banner
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+      // /MAIN CONTENT
+      // main content end
+      //
+        footer start--
+        <footer class="site-footer">
+        <div class="text-center">
+        2014 - Alvarez.is
+        <a href="blank.html#" class="go-top">
+        <i class="fa fa-angle-up"></i>
+        </a>
+        </div>
+        </footer>
+        <!--footer end
+    // js placed at the end of the document so the pages load faster
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='assets/js/jquery.scrollTo.min.js')
+    script(src='assets/js/jquery.nicescroll.js', type='text/javascript')
+    // common script for all pages
+    script(src='assets/js/common-scripts.js')
+<<<<<<< HEAD
+    script(src='assets/plugins/dataTables/jquery.dataTables.js')
+    script(src='assets/plugins/dataTables/dataTables.bootstrap.js')
+    script(src='javascripts/gttingdatafromserver.js')
+    // script for this page
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example').dataTable();
+      });
+    script.
+=======
+    // script for this page
+    script.
+>>>>>>> 345c6492e86dfaea09cb270cc52b7970b2c40778
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+      });
